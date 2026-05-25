@@ -1,12 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Shayari = () => {
-  const sections = [
-    { title: 'Shayari', content: 'Dil se jo baat nikalti hai, asar rakhti hai...' },
-    { title: 'Gazal', content: 'Suna hai log use aankh bhar ke dekhte hain...' },
-    { title: 'Nazm', content: 'Woh jo hum mein tum mein qarar tha...' },
-    { title: 'Geet', content: 'Zindagi ki na toote ladi, pyaar kar le...' },
+  const [filter, setFilter] = useState('All');
+
+  const poetryItems = [
+    { 
+      title: 'Asar-e-Dil', 
+      category: 'Shayari', 
+      content: 'Dil se jo baat nikalti hai, asar rakhti hai,\nPar nahin, taaqat-e-parwaaz magar rakhti hai.' 
+    },
+    { 
+      title: 'Nikamma Ishq', 
+      category: 'Shayari', 
+      content: 'Ishq ne ghalib nikamma kar diya,\nWaise hum bhi aadmi the kaam ke.' 
+    },
+    { 
+      title: 'Aankh Bhar Ke', 
+      category: 'Gazal', 
+      content: 'Suna hai log use aankh bhar ke dekhte hain,\nSo us ke shahr mein kuchh din thaher ke dekhte hain.' 
+    },
+    { 
+      title: 'Ranjish Hi Sahi', 
+      category: 'Gazal', 
+      content: 'Ranjish hi sahi dil hi dukhane ke liye aa,\nAa phir se mujhe chhod ke jaane ke liye aa.' 
+    },
+    { 
+      title: 'Hum Mein Tum Mein', 
+      category: 'Nazm', 
+      content: 'Woh jo hum mein tum mein qarar tha, tumhein yaad ho ke na yaad ho,\nWahi yaani waada nibah ka, tumhein yaad ho ke na yaad ho.' 
+    },
+    { 
+      title: 'Aadhi Raat Ke Baad', 
+      category: 'Nazm', 
+      content: 'Raat aadhi se zyaada ja chuki hai, aasman par chand chup chap khada hai,\nAur main apni purani yaadon ke panno ko tatol raha hoon.' 
+    },
+    { 
+      title: 'Zindagi Ki Ladi', 
+      category: 'Geet', 
+      content: 'Zindagi ki na toote ladi, pyaar kar le ghadi do ghadi,\nLambi lambi umariya ko chhod, pyari pyari umariya se jod.' 
+    },
+    { 
+      title: 'Alvida Na Kehna', 
+      category: 'Geet', 
+      content: 'Chalte chalte mere yeh geet yaad rakhna,\nKabhi alvida na kehna, kabhi alvida na kehna.' 
+    },
   ];
+
+  const filteredItems = filter === 'All' ? poetryItems : poetryItems.filter(item => item.category === filter);
 
   return (
     <div className="container section-padding" style={{ textAlign: 'center' }}>
@@ -15,14 +55,35 @@ const Shayari = () => {
         <p className="shayari-subtitle">Echoes of the soul in words.</p>
       </header>
 
-      <div className="shayari-grid">
-        {sections.map((section) => (
-          <div key={section.title} className="glass rekhta-card">
-            <h2 className="rekhta-title">
-              {section.title}
-            </h2>
-            <p className="rekhta-content">
-              "{section.content}"
+      {/* Category Filters */}
+      <div className="shayari-filters">
+        {['All', 'Shayari', 'Gazal', 'Nazm', 'Geet'].map((cat) => (
+          <button 
+            key={cat} 
+            onClick={() => setFilter(cat)}
+            className="filter-btn"
+            style={{ 
+              background: filter === cat ? 'var(--primary)' : 'rgba(255,255,255,0.05)',
+              borderColor: filter === cat ? 'var(--primary)' : 'var(--border)'
+            }}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      {/* Poetry Grid */}
+      <div className="poetry-grid">
+        {filteredItems.map((item, idx) => (
+          <div key={idx} className="glass poetry-card">
+            <span className="poetry-category">{item.category}</span>
+            <h2 className="poetry-title">{item.title}</h2>
+            <p className="poetry-content">
+              {item.content.split('\n').map((line, lineIdx) => (
+                <span key={lineIdx} style={{ display: 'block', marginBottom: '0.5rem' }}>
+                  {line}
+                </span>
+              ))}
             </p>
             <button className="explore-btn">
               Explore More <span className="arrow">→</span>
@@ -33,7 +94,7 @@ const Shayari = () => {
 
       <style>{`
         .shayari-header {
-          margin-bottom: 6rem;
+          margin-bottom: 3rem;
         }
         .shayari-title {
           font-size: 4rem;
@@ -48,44 +109,76 @@ const Shayari = () => {
           color: var(--text-muted);
           font-style: italic;
         }
-        .shayari-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 4rem;
+        .shayari-filters {
+          display: flex;
+          justify-content: center;
+          gap: 1.5rem;
+          margin-bottom: 4rem;
+          flex-wrap: wrap;
         }
-        .rekhta-card {
-          padding: 3rem;
+        .filter-btn {
+          padding: 0.5rem 1.5rem;
+          border-radius: 2rem;
+          border: 1px solid var(--border);
+          color: var(--text);
+          font-weight: 500;
+          transition: var(--transition);
+          cursor: pointer;
+        }
+        .filter-btn:hover {
+          background: var(--primary) !important;
+          border-color: var(--primary) !important;
+          transform: translateY(-2px);
+        }
+        .poetry-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 2.5rem;
+        }
+        .poetry-card {
+          padding: 3rem 2.5rem;
           border-radius: 1.5rem;
           transition: var(--transition);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          text-align: center;
         }
-        .rekhta-card:hover {
+        .poetry-card:hover {
           transform: translateY(-5px);
           border-color: var(--primary);
           box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
         }
-        .rekhta-title {
-          font-size: 2.5rem;
-          color: var(--text);
-          margin-bottom: 2rem;
-          border-bottom: 2px solid var(--primary);
-          display: inline-block;
-          padding-bottom: 0.5rem;
+        .poetry-category {
+          font-size: 0.8rem;
+          font-weight: 600;
+          color: var(--primary);
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          margin-bottom: 1rem;
         }
-        .rekhta-content {
-          font-size: 1.5rem;
-          line-height: 2.5rem;
+        .poetry-title {
+          font-size: 1.75rem;
+          color: var(--text);
+          margin-bottom: 1.5rem;
+        }
+        .poetry-content {
+          font-size: 1.3rem;
+          line-height: 2.4rem;
           color: var(--text-muted);
           font-family: 'Playfair Display', serif;
           font-style: italic;
+          margin-bottom: 2rem;
         }
         .explore-btn {
-          margin-top: 2rem;
           color: var(--primary);
           font-weight: 600;
           cursor: pointer;
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
+          transition: var(--transition);
         }
         .explore-btn .arrow {
           transition: transform 0.3s ease;
@@ -96,25 +189,34 @@ const Shayari = () => {
 
         @media (max-width: 768px) {
           .shayari-header {
-            margin-bottom: 3.5rem;
+            margin-bottom: 2.5rem;
           }
           .shayari-title {
             font-size: 2.75rem;
           }
-          .shayari-grid {
+          .shayari-filters {
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+          }
+          .filter-btn {
+            padding: 0.4rem 1.2rem;
+            font-size: 0.9rem;
+          }
+          .poetry-grid {
             grid-template-columns: 1fr;
             gap: 2rem;
           }
-          .rekhta-card {
-            padding: 2rem;
+          .poetry-card {
+            padding: 2rem 1.5rem;
           }
-          .rekhta-title {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+          .poetry-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
           }
-          .rekhta-content {
-            font-size: 1.25rem;
+          .poetry-content {
+            font-size: 1.15rem;
             line-height: 2rem;
+            margin-bottom: 1.5rem;
           }
         }
       `}</style>
