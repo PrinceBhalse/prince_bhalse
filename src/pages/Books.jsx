@@ -12,6 +12,20 @@ const Books = () => {
     <div className="container section-padding">
       <h1 className="books-title">My Library</h1>
       
+      {/* Coming Soon Section */}
+      <div className="glass coming-soon-card" style={{
+        padding: '4rem 2rem',
+        textAlign: 'center',
+        maxWidth: '600px',
+        margin: '0 auto'
+      }}>
+        <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--text)' }}>Coming Soon</h2>
+        <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: '1.6' }}>
+          I am currently curating a list of books that have influenced my software engineering practices, coding philosophy, and creative projects. Stay tuned!
+        </p>
+      </div>
+
+      {/* Commented out for now until books are finalized
       <div className="books-grid">
         {books.map((book, idx) => (
           <a key={idx} href={book.link} target="_blank" rel="noopener noreferrer" className="book-card">
@@ -27,6 +41,7 @@ const Books = () => {
           </a>
         ))}
       </div>
+      */}
 
       <style>{`
         .books-title {
