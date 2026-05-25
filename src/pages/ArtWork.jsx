@@ -16,19 +16,17 @@ const ArtWork = () => {
 
   return (
     <div className="container section-padding">
-      <h1 style={{ fontSize: '3.5rem', marginBottom: '2rem', textAlign: 'center' }}>Exhibition Hall</h1>
+      <h1 className="artwork-title">Exhibition Hall</h1>
       
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginBottom: '4rem' }}>
+      <div className="artwork-filters">
         {['All', 'Paintings', 'Digital Art', 'Sketches'].map((cat) => (
           <button 
             key={cat} 
             onClick={() => setFilter(cat)}
+            className="filter-btn"
             style={{ 
-              padding: '0.5rem 1.5rem', 
-              borderRadius: '2rem', 
               background: filter === cat ? 'var(--primary)' : 'rgba(255,255,255,0.05)',
-              border: '1px solid var(--border)',
-              transition: 'var(--transition)'
+              borderColor: filter === cat ? 'var(--primary)' : 'var(--border)'
             }}
           >
             {cat}
@@ -36,23 +34,14 @@ const ArtWork = () => {
         ))}
       </div>
 
-      <div style={{ 
-        display: 'grid', 
-        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
-        gap: '2rem' 
-      }}>
+      <div className="artwork-grid">
         {filteredItems.map((item, idx) => (
           <div key={idx} className="glass art-card" style={{ padding: '1rem', overflow: 'hidden' }}>
             <div style={{ overflow: 'hidden', borderRadius: '1rem' }}>
               <img 
                 src={item.img} 
                 alt={item.title} 
-                style={{ 
-                  width: '100%', 
-                  aspectRatio: '1', 
-                  objectFit: 'cover',
-                  transition: 'transform 0.5s ease'
-                }} 
+                className="art-img"
               />
             </div>
             <div style={{ padding: '1.5rem 1rem 0.5rem' }}>
@@ -66,8 +55,63 @@ const ArtWork = () => {
       </div>
 
       <style>{`
-        .art-card:hover img {
+        .artwork-title {
+          font-size: 3.5rem;
+          margin-bottom: 2rem;
+          text-align: center;
+        }
+        .artwork-filters {
+          display: flex;
+          justify-content: center;
+          gap: 1.5rem;
+          margin-bottom: 4rem;
+          flex-wrap: wrap;
+        }
+        .filter-btn {
+          padding: 0.5rem 1.5rem;
+          border-radius: 2rem;
+          border: 1px solid var(--border);
+          color: var(--text);
+          font-weight: 500;
+          transition: var(--transition);
+        }
+        .filter-btn:hover {
+          background: var(--primary) !important;
+          border-color: var(--primary) !important;
+          transform: translateY(-2px);
+        }
+        .artwork-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+        }
+        .art-img {
+          width: 100%;
+          aspect-ratio: 1;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+          display: block;
+        }
+        .art-card:hover .art-img {
           transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+          .artwork-title {
+            font-size: 2.5rem;
+          }
+          .artwork-filters {
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+          }
+          .filter-btn {
+            padding: 0.4rem 1.2rem;
+            font-size: 0.9rem;
+          }
+          .artwork-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+          }
         }
       `}</style>
     </div>

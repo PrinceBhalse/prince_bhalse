@@ -28,37 +28,26 @@ const Projects = () => {
 
   return (
     <div className="container section-padding">
-      <h1 style={{ fontSize: '3.5rem', marginBottom: '4rem', textAlign: 'center' }}>Software Lab</h1>
+      <h1 className="projects-title">Software Lab</h1>
       
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
+      <div className="projects-list">
         {projects.map((project, idx) => (
-          <div key={idx} className="glass" style={{ 
-            display: 'flex', 
-            flexDirection: idx % 2 === 0 ? 'row' : 'row-reverse',
-            alignItems: 'center',
-            gap: '4rem',
-            padding: '3rem',
-            overflow: 'hidden'
-          }}>
-            <div style={{ flex: 1 }}>
+          <div key={idx} className={`glass project-card ${idx % 2 === 0 ? 'row-normal' : 'row-reverse'}`}>
+            <div className="project-image-container">
               <img 
                 src={project.thumbnail} 
                 alt={project.title} 
-                style={{ 
-                  width: '100%', 
-                  borderRadius: '1rem',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
-                }} 
+                className="project-thumbnail"
               />
             </div>
             
-            <div style={{ flex: 1 }}>
-              <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>{project.title}</h2>
-              <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', marginBottom: '2.5rem' }}>
+            <div className="project-details">
+              <h2 className="project-name">{project.title}</h2>
+              <p className="project-desc">
                 {project.desc}
               </p>
               
-              <div style={{ display: 'flex', gap: '1.5rem' }}>
+              <div className="project-actions">
                 <a href={project.live} className="project-link">
                   <ExternalLink size={20} /> Live Demo
                 </a>
@@ -72,6 +61,56 @@ const Projects = () => {
       </div>
 
       <style>{`
+        .projects-title {
+          font-size: 3.5rem;
+          margin-bottom: 4rem;
+          text-align: center;
+        }
+        .projects-list {
+          display: flex;
+          flex-direction: column;
+          gap: 6rem;
+        }
+        .project-card {
+          display: flex;
+          align-items: center;
+          gap: 4rem;
+          padding: 3rem;
+          overflow: hidden;
+        }
+        .project-card.row-normal {
+          flex-direction: row;
+        }
+        .project-card.row-reverse {
+          flex-direction: row-reverse;
+        }
+        .project-image-container {
+          flex: 1;
+          width: 100%;
+        }
+        .project-thumbnail {
+          width: 100%;
+          border-radius: 1rem;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+          display: block;
+        }
+        .project-details {
+          flex: 1;
+        }
+        .project-name {
+          font-size: 2.5rem;
+          margin-bottom: 1.5rem;
+        }
+        .project-desc {
+          font-size: 1.2rem;
+          color: var(--text-muted);
+          margin-bottom: 2.5rem;
+          line-height: 1.6;
+        }
+        .project-actions {
+          display: flex;
+          gap: 1.5rem;
+        }
         .project-link {
           display: flex;
           align-items: center;
@@ -92,6 +131,51 @@ const Projects = () => {
         }
         .project-link.github:hover {
           background: rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 1024px) {
+          .project-card {
+            gap: 2.5rem;
+            padding: 2rem;
+          }
+          .project-name {
+            font-size: 2rem;
+          }
+          .project-desc {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .projects-title {
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+          }
+          .projects-list {
+            gap: 3rem;
+          }
+          .project-card.row-normal,
+          .project-card.row-reverse {
+            flex-direction: column;
+            gap: 2rem;
+            padding: 1.5rem;
+          }
+          .project-name {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+          }
+          .project-desc {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+          }
+          .project-actions {
+            flex-direction: column;
+            gap: 1rem;
+          }
+          .project-link {
+            justify-content: center;
+          }
         }
       `}</style>
     </div>

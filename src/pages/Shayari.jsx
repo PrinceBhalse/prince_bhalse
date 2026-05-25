@@ -1,11 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const Shayari = () => {
-  useEffect(() => {
-    document.body.classList.add('theme-shayari');
-    return () => document.body.classList.remove('theme-shayari');
-  }, []);
-
   const sections = [
     { title: 'Shayari', content: 'Dil se jo baat nikalti hai, asar rakhti hai...' },
     { title: 'Gazal', content: 'Suna hai log use aankh bhar ke dekhte hain...' },
@@ -14,52 +9,113 @@ const Shayari = () => {
   ];
 
   return (
-    <div className="container" style={{ padding: '8rem 2rem', textAlign: 'center' }}>
-      <header style={{ marginBottom: '6rem' }}>
-        <h1 style={{ fontSize: '4rem', color: '#b22222', marginBottom: '1rem' }}>The Inkwell</h1>
-        <p style={{ fontSize: '1.2rem', fontStyle: 'italic' }}>Echoes of the soul in words.</p>
+    <div className="container section-padding" style={{ textAlign: 'center' }}>
+      <header className="shayari-header">
+        <h1 className="shayari-title">The Inkwell</h1>
+        <p className="shayari-subtitle">Echoes of the soul in words.</p>
       </header>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem' }}>
+      <div className="shayari-grid">
         {sections.map((section) => (
-          <div key={section.title} className="rekhta-card" style={{
-            padding: '3rem',
-            border: '1px solid rgba(0,0,0,0.05)',
-            background: 'white',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.02)',
-            borderRadius: '2px'
-          }}>
-            <h2 style={{ 
-              fontSize: '2.5rem', 
-              color: '#333', 
-              marginBottom: '2rem',
-              borderBottom: '2px solid #b22222',
-              display: 'inline-block'
-            }}>
+          <div key={section.title} className="glass rekhta-card">
+            <h2 className="rekhta-title">
               {section.title}
             </h2>
-            <p style={{ 
-              fontSize: '1.5rem', 
-              lineHeight: '2.5rem', 
-              color: '#555',
-              fontFamily: "'Playfair Display', serif"
-            }}>
-              {section.content}
+            <p className="rekhta-content">
+              "{section.content}"
             </p>
-            <button style={{ marginTop: '2rem', color: '#b22222', fontWeight: '600' }}>
-              Explore More →
+            <button className="explore-btn">
+              Explore More <span className="arrow">→</span>
             </button>
           </div>
         ))}
       </div>
 
       <style>{`
+        .shayari-header {
+          margin-bottom: 6rem;
+        }
+        .shayari-title {
+          font-size: 4rem;
+          margin-bottom: 1rem;
+          background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          display: inline-block;
+        }
+        .shayari-subtitle {
+          font-size: 1.2rem;
+          color: var(--text-muted);
+          font-style: italic;
+        }
+        .shayari-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 4rem;
+        }
         .rekhta-card {
+          padding: 3rem;
+          border-radius: 1.5rem;
           transition: var(--transition);
         }
         .rekhta-card:hover {
           transform: translateY(-5px);
-          box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+          border-color: var(--primary);
+          box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+        }
+        .rekhta-title {
+          font-size: 2.5rem;
+          color: var(--text);
+          margin-bottom: 2rem;
+          border-bottom: 2px solid var(--primary);
+          display: inline-block;
+          padding-bottom: 0.5rem;
+        }
+        .rekhta-content {
+          font-size: 1.5rem;
+          line-height: 2.5rem;
+          color: var(--text-muted);
+          font-family: 'Playfair Display', serif;
+          font-style: italic;
+        }
+        .explore-btn {
+          margin-top: 2rem;
+          color: var(--primary);
+          font-weight: 600;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        .explore-btn .arrow {
+          transition: transform 0.3s ease;
+        }
+        .explore-btn:hover .arrow {
+          transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+          .shayari-header {
+            margin-bottom: 3.5rem;
+          }
+          .shayari-title {
+            font-size: 2.75rem;
+          }
+          .shayari-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+          .rekhta-card {
+            padding: 2rem;
+          }
+          .rekhta-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+          }
+          .rekhta-content {
+            font-size: 1.25rem;
+            line-height: 2rem;
+          }
         }
       `}</style>
     </div>

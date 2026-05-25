@@ -1,11 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const Blog = () => {
-  useEffect(() => {
-    document.body.classList.add('theme-blog');
-    return () => document.body.classList.remove('theme-blog');
-  }, []);
-
   const blogs = [
     { id: 1, title: 'The Future of Agentic AI', summary: 'Exploring how autonomous agents are reshaping the software landscape.' },
     { id: 2, title: 'Minimalism in Digital Design', summary: 'Why less is often more when it comes to user interfaces.' },
@@ -15,37 +10,25 @@ const Blog = () => {
   ];
 
   return (
-    <div className="container" style={{ padding: '8rem 2rem' }}>
-      <header style={{ marginBottom: '4rem' }}>
-        <h1 style={{ 
-          fontSize: '3.5rem', 
-          display: 'inline-block',
-          background: 'var(--blog-heading-bg)',
-          padding: '0.2rem 1rem',
-          marginBottom: '1rem'
-        }}>
-          Most Viewed 5 Blogs
-        </h1>
-        <p style={{ fontSize: '1.2rem', opacity: 0.7 }}>Insights, tutorials, and stories.</p>
+    <div className="container section-padding">
+      <header className="blog-header">
+        <h1 className="blog-title">Most Viewed Blogs</h1>
+        <p className="blog-subtitle">Insights, tutorials, and stories.</p>
       </header>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+      <div className="blog-list">
         {blogs.map((blog) => (
-          <article key={blog.id} style={{ borderBottom: '1px solid rgba(0,0,0,0.1)', paddingBottom: '2rem' }}>
-            <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>{blog.title}</h2>
-            <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem', opacity: 0.8 }}>{blog.summary}</p>
-            <button style={{ 
-              fontWeight: '600', 
-              textDecoration: 'underline', 
-              textUnderlineOffset: '4px' 
-            }}>
-              Read More
+          <article key={blog.id} className="glass blog-card">
+            <h2 className="blog-post-title">{blog.title}</h2>
+            <p className="blog-post-summary">{blog.summary}</p>
+            <button className="read-more-btn">
+              Read More <span className="arrow">→</span>
             </button>
           </article>
         ))}
       </div>
 
-      <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+      <div className="pagination">
         <button className="page-btn">1</button>
         <button className="page-btn">2</button>
         <button className="page-btn">3</button>
@@ -53,19 +36,111 @@ const Blog = () => {
       </div>
 
       <style>{`
+        .blog-header {
+          margin-bottom: 4rem;
+          text-align: center;
+        }
+        .blog-title {
+          font-size: 3.5rem;
+          margin-bottom: 1rem;
+          background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          display: inline-block;
+        }
+        .blog-subtitle {
+          font-size: 1.2rem;
+          color: var(--text-muted);
+        }
+        .blog-list {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+        .blog-card {
+          padding: 2.5rem;
+          transition: var(--transition);
+        }
+        .blog-card:hover {
+          transform: translateY(-4px);
+          border-color: var(--primary);
+          box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+        }
+        .blog-post-title {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+          color: var(--text);
+        }
+        .blog-post-summary {
+          font-size: 1.1rem;
+          margin-bottom: 1.5rem;
+          color: var(--text-muted);
+          line-height: 1.7;
+        }
+        .read-more-btn {
+          font-weight: 600;
+          color: var(--primary);
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          cursor: pointer;
+        }
+        .read-more-btn .arrow {
+          transition: transform 0.3s ease;
+        }
+        .read-more-btn:hover .arrow {
+          transform: translateX(4px);
+        }
+        .pagination {
+          margin-top: 4rem;
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+        }
         .page-btn {
           width: 40px;
           height: 40px;
           display: flex;
-          alignItems: center;
-          justifyContent: center;
-          border: 1px solid rgba(0,0,0,0.1);
+          align-items: center;
+          justify-content: center;
+          border: 1px solid var(--border);
           border-radius: 50%;
+          color: var(--text);
+          background: rgba(255, 255, 255, 0.02);
+          font-weight: 500;
           transition: var(--transition);
         }
         .page-btn:hover {
-          background: var(--blog-heading-bg);
-          border-color: var(--blog-heading-bg);
+          background: var(--primary);
+          border-color: var(--primary);
+          color: #ffffff;
+          transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+          .blog-header {
+            margin-bottom: 2.5rem;
+          }
+          .blog-title {
+            font-size: 2.5rem;
+          }
+          .blog-subtitle {
+            font-size: 1.1rem;
+          }
+          .blog-card {
+            padding: 1.75rem;
+          }
+          .blog-post-title {
+            font-size: 1.6rem;
+            margin-bottom: 0.75rem;
+          }
+          .blog-post-summary {
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+          }
+          .pagination {
+            margin-top: 3rem;
+          }
         }
       `}</style>
     </div>

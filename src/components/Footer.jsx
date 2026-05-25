@@ -1,10 +1,10 @@
 import React from 'react';
-import { 
+import {
   Link,
-  Share2, 
-  BookOpen, 
-  Globe, 
-  ArrowUpRight 
+  Share2,
+  BookOpen,
+  Globe,
+  ArrowUpRight
 } from 'lucide-react';
 
 const Footer = () => {
@@ -19,18 +19,18 @@ const Footer = () => {
   ];
 
   return (
-    <footer style={{ padding: '4rem 0', marginTop: '4rem', borderTop: '1px solid var(--border)' }}>
-      <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <p style={{ opacity: 0.6, fontSize: '0.9rem' }}>
+    <footer className="footer-section">
+      <div className="container footer-container">
+        <p className="footer-copyright">
           © 2026 Prince Bhalse. All rights reserved.
         </p>
-        
-        <div style={{ display: 'flex', gap: '1.5rem' }}>
+
+        <div className="footer-socials">
           {socials.map((social) => (
-            <a 
-              key={social.name} 
-              href={social.url} 
-              target="_blank" 
+            <a
+              key={social.name}
+              href={social.url}
+              target="_blank"
               rel="noopener noreferrer"
               className="social-icon"
               title={social.name}
@@ -42,6 +42,24 @@ const Footer = () => {
       </div>
 
       <style>{`
+        .footer-section {
+          padding: 4rem 0;
+          margin-top: 8rem;
+          border-top: 1px solid var(--border);
+        }
+        .footer-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .footer-copyright {
+          opacity: 0.6;
+          font-size: 0.9rem;
+        }
+        .footer-socials {
+          display: flex;
+          gap: 1.5rem;
+        }
         .social-icon {
           color: var(--text-muted);
           transition: var(--transition);
@@ -49,6 +67,23 @@ const Footer = () => {
         .social-icon:hover {
           color: var(--primary);
           transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+          .footer-section {
+            padding: 3rem 0;
+            margin-top: 4rem;
+          }
+          .footer-container {
+            flex-direction: column-reverse;
+            gap: 2rem;
+            text-align: center;
+          }
+          .footer-socials {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+          }
         }
       `}</style>
     </footer>

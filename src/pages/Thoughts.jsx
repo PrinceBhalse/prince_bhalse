@@ -11,21 +11,12 @@ const Thoughts = () => {
 
   return (
     <div className="container section-padding">
-      <h1 style={{ fontSize: '3.5rem', marginBottom: '4rem', textAlign: 'center' }}>Daily Musings</h1>
+      <h1 className="thoughts-title">Daily Musings</h1>
       
-      <div style={{ 
-        columnCount: window.innerWidth > 768 ? 2 : 1, 
-        columnGap: '2rem' 
-      }}>
+      <div className="thoughts-grid">
         {thoughts.map((thought, idx) => (
-          <div key={idx} className="glass" style={{ 
-            padding: '2.5rem', 
-            marginBottom: '2rem', 
-            breakInside: 'avoid',
-            display: 'inline-block',
-            width: '100%'
-          }}>
-            <p style={{ fontSize: '1.4rem', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.4' }}>
+          <div key={idx} className="glass thought-card">
+            <p className="thought-text">
               "{thought.text}"
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -35,6 +26,48 @@ const Thoughts = () => {
           </div>
         ))}
       </div>
+
+      <style>{`
+        .thoughts-title {
+          font-size: 3.5rem;
+          margin-bottom: 4rem;
+          text-align: center;
+        }
+        .thoughts-grid {
+          column-count: 2;
+          column-gap: 2rem;
+        }
+        .thought-card {
+          padding: 2.5rem;
+          margin-bottom: 2rem;
+          break-inside: avoid;
+          display: inline-block;
+          width: 100%;
+        }
+        .thought-text {
+          font-size: 1.4rem;
+          font-style: 'italic';
+          margin-bottom: 1.5rem;
+          line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+          .thoughts-title {
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+          }
+          .thoughts-grid {
+            column-count: 1;
+          }
+          .thought-card {
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+          }
+          .thought-text {
+            font-size: 1.2rem;
+          }
+        }
+      `}</style>
     </div>
   );
 };
