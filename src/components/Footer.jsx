@@ -6,16 +6,60 @@ import {
   Globe,
   ArrowUpRight
 } from 'lucide-react';
+import instagramIcon from '../icons/instagram.png';
+import mediumIcon from '../icons/medium.png';
+import pinterestIcon from '../icons/pinterest.png';
+import redditIcon from '../icons/reddit.png';
+import twitterIcon from '../icons/twitter.png';
+import linkedinIcon from '../icons/linkedin.png';
+import quoraIcon from '../icons/quora.png';
 
 const Footer = () => {
   const socials = [
-    { name: 'Instagram', icon: <Share2 size={20} />, url: 'https://www.bing.com/ck/a?!&&p=ece1fe8988760f8dbf82c686f9fa94174e5451bf27d1acd6b70ddcf713b8c0feJmltdHM9MTc3ODcxNjgwMA&ptn=3&ver=2&hsh=4&fclid=32f95817-92b3-6c25-0ae4-4f4e93916d7c&psq=instagram%2fprincebhalse92&u=a1aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9wcmluY2ViaGFsc2U5Mi8' },
-    { name: 'X', icon: <Share2 size={20} />, url: 'https://x.com/princebhalse92' },
-    { name: 'Reddit', icon: <Share2 size={20} />, url: 'https://www.reddit.com/user/princebhalse92/' },
-    { name: 'Quora', icon: <ArrowUpRight size={20} />, url: 'https://www.quora.com/profile/Prince-2259?ch=3&oid=1593407310&share=cb4f1294&srid=uY3Gm0&target_type=user' },
-    { name: 'Medium', icon: <BookOpen size={20} />, url: 'https://medium.com/@princebhalse92' },
-    { name: 'LinkedIn', icon: <Link size={20} />, url: 'https://in.linkedin.com/in/prince-bhalse-050470271' },
-    { name: 'Pinterest', icon: <Globe size={20} />, url: 'https://pin.it/VcuuMKkbm' },
+    { name: 'Instagram', icon: 
+      (
+  <img
+    src={instagramIcon}
+    alt="Instagram"
+    className="w-1 h-1"
+  />)
+  , url: 'https://www.bing.com/ck/a?!&&p=ece1fe8988760f8dbf82c686f9fa94174e5451bf27d1acd6b70ddcf713b8c0feJmltdHM9MTc3ODcxNjgwMA&ptn=3&ver=2&hsh=4&fclid=32f95817-92b3-6c25-0ae4-4f4e93916d7c&psq=instagram%2fprincebhalse92&u=a1aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9wcmluY2ViaGFsc2U5Mi8' },
+    { name: 'X', icon: (
+  <img
+    src={twitterIcon}
+    alt="X"
+    className="w-1 h-1"
+  />), url: 'https://x.com/princebhalse92' },
+    { name: 'Reddit', icon: (
+  <img
+    src={redditIcon}
+    alt="Reddit"
+    className="w-1 h-1"
+  />) , url: 'https://www.reddit.com/user/princebhalse92/' },
+    { name: 'Quora', icon: (
+  <img
+    src={quoraIcon}
+    alt="Quora"
+    className="w-1 h-1"
+  />), url: 'https://www.quora.com/profile/Prince-2259?ch=3&oid=1593407310&share=cb4f1294&srid=uY3Gm0&target_type=user' },
+    { name: 'Medium', icon: (
+  <img
+    src={mediumIcon}
+    alt="Medium"
+    className="w-1 h-1"
+  />), url: 'https://medium.com/@princebhalse92' },
+    { name: 'LinkedIn', icon: (
+  <img
+    src={linkedinIcon}
+    alt="LinkedIn"
+    className="w-1 h-1"
+  />), url: 'https://in.linkedin.com/in/prince-bhalse-050470271' },
+    { name: 'Pinterest', icon: (
+  <img
+    src={pinterestIcon}
+    alt="Pinterest"
+    className="w-1 h-1"
+  />), url: 'https://pin.it/VcuuMKkbm' },
   ];
 
   return (
