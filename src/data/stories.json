@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "The Whispering Pines",
+    "slug": "the-whispering-pines",
+    "summary": "An ancient forest that remembers every footprint left within its shade.",
+    "content": [
+      "The trail ended where the pines began, their roots weaving a gnarled staircase into the mountain's heart. For generations, the villagers spoke of the forest as if it were a sleeping giant, breathing through the rustle of dry needles and sighing with the wind. They said the trees kept records. If you walked long enough in silence, you would hear your own memories whispered back to you.",
+      "Leo didn't believe in folklore, but as he stepped under the dense canopy, the temperature plummeted. The noise of the valley—the distant hum of cars, the rush of the river—faded into a heavy, static quiet. He placed his hand on the damp bark of a towering pine. Beneath his palm, he felt a faint, rhythmic pulse, like water rushing through old pipes. Or a heart beating in slow motion.",
+      "As twilight stretched long shadows across the mossy floor, a voice drifted through the branches. It didn't speak in words, but in feelings: the warmth of a forgotten summer afternoon, the sting of a childhood goodbye. Leo closed his eyes, finally listening. The forest wasn't haunted by spirits; it was haunted by time itself, holding onto the transient echoes of everyone who had ever wandered its paths."
+    ],
+    "category": "Fiction",
+    "date": "2026-05-26",
+    "readTime": "4 min read",
+    "tags": ["Nature", "Mystery", "ShortStory"]
+  },
+  {
+    "id": 2,
+    "title": "Midnight at the Clock Tower",
+    "slug": "midnight-at-the-clock-tower",
+    "summary": "A watchmaker discovers a thirteenth hour hidden in the gears of time.",
+    "content": [
+      "Arthur had spent forty years maintaining the town's mechanical heart. The brass gears of the great clock tower were as familiar to him as the lines on his own hands. Every tick was a heartbeat; every tock was a breath. But on the eve of the winter solstice, as the blizzard howled outside, the pendulum behaved strangely. It paused at the top of its arc.",
+      "The hands of the clock reached twelve, but instead of striking midnight, the gears shivered. The heavy iron bells remained silent. Suddenly, the second hand leaped backward, ticking into a space that shouldn't exist. The numbers on the dial shifted, revealing a faint, hand-carved Roman numeral thirteen.",
+      "Outside, the falling snowflakes froze in mid-air. Arthur stepped out onto the balcony. The world had turned to glass—motionless, silent, and cast in a pale blue hue. He realized then that time wasn't a straight line, but a wheel with a hidden tooth. In this thirteenth hour, the universe held its breath, offering Arthur one quiet hour of infinite peace to look at the frozen beauty of a world standing still."
+    ],
+    "category": "Fantasy",
+    "date": "2026-05-18",
+    "readTime": "3 min read",
+    "tags": ["Time", "MagicRealism", "Solitude"]
+  },
+  {
+    "id": 3,
+    "title": "Echoes of the Oasis",
+    "slug": "echoes-of-the-oasis",
+    "summary": "A wanderer finds a pool of water that reflects the future instead of the sky.",
+    "content": [
+      "The desert was a crucible of wind and sand, erasing roads and challenging sanity. Kael had walked for three days following a map drawn from hearsay, searching for the legend of the Shimmering Well. Skeptics called it a mirage born of dehydration, but to those who crossed the dunes, it was the only sanctuary in a thousand miles.",
+      "When the dunes finally parted, they revealed a ring of emerald palms surrounding a pool so still it looked like polished obsidian. Kael knelt at the water's edge to wash the dust from his face. But as he bent over the surface, he stopped. The pool did not reflect his sun-scorched face, nor did it show the clear blue desert sky.",
+      "Instead, it showed a bustling harbor, green hills, and a ship sailing into the dawn—a life he had never known, but one that felt strangely calling. He realized the oasis was not just a source of water, but a crossroad of possibilities. By drinking from its depths, a wanderer did not just quench their thirst; they chose the path of their tomorrow."
+    ],
+    "category": "Adventure",
+    "date": "2026-05-08",
+    "readTime": "5 min read",
+    "tags": ["Journey", "Destiny", "Desert"]
+  }
+]

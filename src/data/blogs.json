@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "title": "The Future of Agentic AI",
+    "slug": "the-future-of-agentic-ai",
+    "summary": "Exploring how autonomous agents are reshaping the software landscape.",
+    "content": [
+      "The next epoch of artificial intelligence is moving beyond passive answer-generation. We are entering the age of Agentic AI—systems that don't just reply, but act. Rather than acting as simple chat interfaces, these agents can reason, plan, use tools, and execute workflows asynchronously to achieve complex goals.",
+      "In software development, this translates to agents that can write, test, debug, and optimize code autonomously. Instead of asking an AI to write a simple function, developers can delegate entire features or debugging tasks. This paradigm shift enables a new level of productivity where humans act as directors and reviewers rather than line-by-line typists.",
+      "However, agentic workflows also bring new challenges. Building reliable reasoning loops, managing state over long-running processes, and ensuring safety boundaries are top priorities for research. The future lies in human-agent collaboration, where specialized agents work seamlessly alongside humans in unified digital workspaces."
+    ],
+    "category": "Technology",
+    "date": "2026-05-25",
+    "readTime": "5 min read",
+    "tags": ["AI", "Software", "Future"]
+  },
+  {
+    "id": 2,
+    "title": "Minimalism in Digital Design",
+    "slug": "minimalism-in-digital-design",
+    "summary": "Why less is often more when it comes to user interfaces.",
+    "content": [
+      "In an era of constant notifications and sensory overload, minimalism in digital interfaces has transitioned from an aesthetic trend to a functional necessity. A minimalist interface is not just one that is empty; it is one that is focused. By stripping away extraneous decorations, we make room for what truly matters: content and action.",
+      "The core principle of digital minimalism is reducing cognitive load. Every button, icon, color, and font weight consumes mental energy. When design is clean, hierarchy becomes crystal clear, and users can navigate instinctively without feeling overwhelmed.",
+      "Achieving premium minimalism requires careful attention to detail. Typography must be pristine, whitespace must be used intentionally as a first-class design element, and subtle visual cues like smooth transitions, soft shadows, and card backdrops (such as glassmorphism) should replace harsh borders and bright accents. Less is indeed more."
+    ],
+    "category": "Design",
+    "date": "2026-05-20",
+    "readTime": "3 min read",
+    "tags": ["Design", "UX/UI", "Minimalism"]
+  },
+  {
+    "id": 3,
+    "title": "The Art of Modern Poetry",
+    "slug": "the-art-of-modern-poetry",
+    "summary": "Bridging the gap between traditional verse and digital mediums.",
+    "content": [
+      "Poetry has always been a mirror to human experience. Historically shared through oral recitations or printed ink on paper, modern poetry is finding a vibrant second life in the digital world. This shift is not just changing how poetry is distributed, but also how it is written and experienced.",
+      "On digital platforms, verses are paired with visual design, audio recordings, and interactive layouts. A poem is no longer just static text on a page; it can be an atmospheric experience with responsive text alignment, gentle backgrounds, and contextual illustrations. This allows the emotional resonance of Shayari, Gazals, and Nazms to reach global audiences in ways that feel immediate and immersive.",
+      "Ultimately, while the medium has changed from paper to screen, the core essence remains identical: using the precise economy of words to touch the depths of the human soul. The digital garden is the perfect modern canvas for these timeless expressions."
+    ],
+    "category": "Literature",
+    "date": "2026-05-15",
+    "readTime": "4 min read",
+    "tags": ["Poetry", "Art", "Culture"]
+  },
+  {
+    "id": 4,
+    "title": "Architecture of Scale",
+    "slug": "architecture-of-scale",
+    "summary": "Building systems that grow with your user base.",
+    "content": [
+      "Scaling software systems is a multi-dimensional challenge. It involves not just handling higher traffic, but managing complexity as teams grow, codebases expand, and user requirements evolve. A truly scalable architecture anticipates these axes of growth from day one.",
+      "Key strategies for scale include strict decoupling, database optimization, caching layers, and modular component design. By separating database-driven content from presentation code, applications remain agile and easy to modify. In frontend engineering, decoupling content into JSON structures allows static or server-side rendered pages to load instantaneously.",
+      "As systems scale, monitoring, observability, and automated testing become the bedrock of stability. A robust verification process ensures that features can be added reliably without introducing regression, keeping the digital platform stable as it expands."
+    ],
+    "category": "Engineering",
+    "date": "2026-05-10",
+    "readTime": "6 min read",
+    "tags": ["Architecture", "Scaling", "WebDev"]
+  },
+  {
+    "id": 5,
+    "title": "Sustainable Coding Practices",
+    "slug": "sustainable-coding-practices",
+    "summary": "How to write efficient code that lasts a lifetime.",
+    "content": [
+      "Sustainability in software engineering is two-fold: environmental efficiency and maintainability. Every byte of data transferred, every redundant network request, and every inefficient computation contributes to digital carbon footprints. More immediately for developers, complex and unstructured codebases lead to 'technical debt' that makes maintenance unsustainable.",
+      "To write sustainable code, prioritize simplicity and clarity over cleverness. Document design decisions, use semantic HTML elements to ensure accessibility and SEO readiness, and avoid over-engineering. Reusing well-defined visual components and centralized state configurations leads to leaner bundle sizes and faster render cycles.",
+      "Ultimately, the most sustainable code is the code that doesn't need to be rewritten. By investing time in proper planning, modular design, and robust code reviews, we build software that serves users efficiently for years to come."
+    ],
+    "category": "Engineering",
+    "date": "2026-05-05",
+    "readTime": "4 min read",
+    "tags": ["Sustainability", "CleanCode", "BestPractices"]
+  }
+]

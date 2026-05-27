@@ -1,50 +1,9 @@
 import React, { useState } from 'react';
+import poetryItems from '../data/shayari.json';
 
 const Shayari = () => {
   const [filter, setFilter] = useState('All');
 
-  const poetryItems = [
-    { 
-      title: 'Asar-e-Dil', 
-      category: 'Shayari', 
-      content: 'Dil se jo baat nikalti hai, asar rakhti hai,\nPar nahin, taaqat-e-parwaaz magar rakhti hai.' 
-    },
-    { 
-      title: 'Nikamma Ishq', 
-      category: 'Shayari', 
-      content: 'Ishq ne ghalib nikamma kar diya,\nWaise hum bhi aadmi the kaam ke.' 
-    },
-    { 
-      title: 'Aankh Bhar Ke', 
-      category: 'Gazal', 
-      content: 'Suna hai log use aankh bhar ke dekhte hain,\nSo us ke shahr mein kuchh din thaher ke dekhte hain.' 
-    },
-    { 
-      title: 'Ranjish Hi Sahi', 
-      category: 'Gazal', 
-      content: 'Ranjish hi sahi dil hi dukhane ke liye aa,\nAa phir se mujhe chhod ke jaane ke liye aa.' 
-    },
-    { 
-      title: 'Hum Mein Tum Mein', 
-      category: 'Nazm', 
-      content: 'Woh jo hum mein tum mein qarar tha, tumhein yaad ho ke na yaad ho,\nWahi yaani waada nibah ka, tumhein yaad ho ke na yaad ho.' 
-    },
-    { 
-      title: 'Aadhi Raat Ke Baad', 
-      category: 'Nazm', 
-      content: 'Raat aadhi se zyaada ja chuki hai, aasman par chand chup chap khada hai,\nAur main apni purani yaadon ke panno ko tatol raha hoon.' 
-    },
-    { 
-      title: 'Zindagi Ki Ladi', 
-      category: 'Geet', 
-      content: 'Zindagi ki na toote ladi, pyaar kar le ghadi do ghadi,\nLambi lambi umariya ko chhod, pyari pyari umariya se jod.' 
-    },
-    { 
-      title: 'Alvida Na Kehna', 
-      category: 'Geet', 
-      content: 'Chalte chalte mere yeh geet yaad rakhna,\nKabhi alvida na kehna, kabhi alvida na kehna.' 
-    },
-  ];
 
   const filteredItems = filter === 'All' ? poetryItems : poetryItems.filter(item => item.category === filter);
 

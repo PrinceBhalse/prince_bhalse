@@ -1,30 +1,9 @@
 import React from 'react';
 import { Link, ExternalLink } from 'lucide-react';
+import projects from '../data/projects.json';
 
 const Projects = () => {
-  const projects = [
-    { 
-      title: 'Veritas', 
-      desc: 'Veritas is a decentralized, multi-signature document verification system built on the Ethereum blockchain and IPFS that establishes an immutable, zero-trust chain of custody to prevent fraud and ensure mathematical proof of document authenticity.',
-      thumbnail: 'https://private-user-images.githubusercontent.com/80117253/597634324-90ff324c-e1f4-4b16-b3ba-9139973fa330.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Nzk3MTA0NzUsIm5iZiI6MTc3OTcxMDE3NSwicGF0aCI6Ii84MDExNzI1My81OTc2MzQzMjQtOTBmZjMyNGMtZTFmNC00YjE2LWIzYmEtOTEzOTk3M2ZhMzMwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTI1VDExNTYxNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTc0ZDljMWIzYTYyYzQ0ODg5MTM2NDFhODRlNjI0ZjliMWNkMDhhMTFlNGU0Y2ZkNzA3Y2FiOGU5MTA4ODI3Y2YmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.2P0eTJtPz_rkERL42eb4ldPAikJsT1iPu6ra4D9GLC0',
-      live: 'https://veritas-gamma-ebon.vercel.app/',
-      github: 'https://github.com/PrinceBhalse/secure_doc_workflow'
-    },
-    { 
-      title: 'AI Data Analysis', 
-      desc: 'Data Analytics tool which can generate chart based summary.',
-      thumbnail: 'https://private-user-images.githubusercontent.com/80117253/597636220-9699fdb6-7157-40a4-b6ae-2684a038a2b8.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Nzk3MTExOTUsIm5iZiI6MTc3OTcxMDg5NSwicGF0aCI6Ii84MDExNzI1My81OTc2MzYyMjAtOTY5OWZkYjYtNzE1Ny00MGE0LWI2YWUtMjY4NGEwMzhhMmI4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTI1VDEyMDgxNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWFlYmMyMzBmZDRiODU0Njc2NDEzNDI1OWFlNzE4MzVjZDRiY2YxYmMzNjU2M2E1ZGY5MTM2ZTZhNDk5NmI4MWYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.0pyv88PDyUMrlsS-llIHnIbZ-nrYg-RxAQaNhRee270',
-      live: 'https://ai-data-analysis-kappa.vercel.app/',
-      github: 'https://github.com/PrinceBhalse/ai-data-analysis'
-    },
-    { 
-      title: 'Movie Recommendation Systme', 
-      desc: 'A collaborative filtering based movie recommendation system based on tmdb dataset.',
-      thumbnail: 'https://private-user-images.githubusercontent.com/80117253/597639262-89efb0c5-e3d3-4015-82f9-97d69a5434d3.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Nzk3MTEwNTQsIm5iZiI6MTc3OTcxMDc1NCwicGF0aCI6Ii84MDExNzI1My81OTc2MzkyNjItODllZmIwYzUtZTNkMy00MDE1LTgyZjktOTdkNjlhNTQzNGQzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTI1VDEyMDU1NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTBhNGVmZDU4M2FjZTQ4NDVmZWRiNTc5ZGM3OGVjOTVhM2RjYmJlNTk0MWMyZDJkMDNiYzdkZmI3MzQ2Yzg4YzgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.-rWWx1ntdsp2-TOd96Z-GlJZsvGdoTZSeOcX72c2lLg',
-      live: 'https://movierecommendationsystem-rlyq.onrender.com/',
-      github: 'https://github.com/PrinceBhalse/MovieRecommendationSystem'
-    },
-  ];
+
 
   return (
     <div className="container section-padding">

@@ -4,6 +4,9 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Blog from './pages/Blog';
+import BlogPostDetail from './pages/BlogPostDetail';
+import Stories from './pages/Stories';
+import StoryDetail from './pages/StoryDetail';
 import Shayari from './pages/Shayari';
 import Thoughts from './pages/Thoughts';
 import Books from './pages/Books';
@@ -31,6 +34,9 @@ function App() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPostDetail />} />
+        <Route path="/stories" element={<Stories />} />
+        <Route path="/stories/:slug" element={<StoryDetail />} />
         <Route path="/shayari" element={<Shayari />} />
         <Route path="/thoughts" element={<Thoughts />} />
         <Route path="/books" element={<Books />} />

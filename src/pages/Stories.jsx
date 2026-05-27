@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import blogsData from '../data/blogs.json';
+import storiesData from '../data/stories.json';
 
-const Blog = () => {
-  // Sort blogs by date descending
-  const sortedBlogs = [...blogsData].sort((a, b) => new Date(b.date) - new Date(a.date));
+const Stories = () => {
+  // Sort stories by date descending
+  const sortedStories = [...storiesData].sort((a, b) => new Date(b.date) - new Date(a.date));
 
   // Pagination states
   const [currentPage, setCurrentPage] = useState(1);
@@ -13,34 +13,34 @@ const Blog = () => {
   // Calculate indices for current page
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = sortedBlogs.slice(indexOfFirstPost, indexOfLastPost);
+  const currentStories = sortedStories.slice(indexOfFirstPost, indexOfLastPost);
 
   // Total pages
-  const totalPages = Math.ceil(sortedBlogs.length / postsPerPage);
+  const totalPages = Math.ceil(sortedStories.length / postsPerPage);
 
   return (
     <div className="container section-padding animate-fade-in">
-      <header className="blog-header">
-        <h1 className="blog-title">Most Viewed Blogs</h1>
-        <p className="blog-subtitle">Insights, tutorials, and stories.</p>
+      <header className="stories-header">
+        <h1 className="stories-title">My Stories</h1>
+        <p className="stories-subtitle">Tales, narratives, and creative writing.</p>
       </header>
 
-      <div className="blog-list">
-        {currentPosts.map((blog) => (
-          <article key={blog.id} className="glass blog-card">
-            <div className="blog-post-meta">
-              <span className="blog-post-category">{blog.category}</span>
+      <div className="stories-list">
+        {currentStories.map((story) => (
+          <article key={story.id} className="glass story-card">
+            <div className="story-post-meta">
+              <span className="story-post-category">{story.category}</span>
               <span className="meta-divider">•</span>
-              <span className="blog-post-date">
-                {new Date(blog.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              <span className="story-post-date">
+                {new Date(story.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
               </span>
               <span className="meta-divider">•</span>
-              <span className="blog-post-readtime">{blog.readTime}</span>
+              <span className="story-post-readtime">{story.readTime}</span>
             </div>
-            <h2 className="blog-post-title">{blog.title}</h2>
-            <p className="blog-post-summary">{blog.summary}</p>
-            <Link to={`/blog/${blog.slug}`} className="read-more-btn">
-              Read More <span className="arrow">→</span>
+            <h2 className="story-post-title">{story.title}</h2>
+            <p className="story-post-summary">{story.summary}</p>
+            <Link to={`/stories/${story.slug}`} className="read-more-btn">
+              Read Story <span className="arrow">→</span>
             </Link>
           </article>
         ))}
@@ -75,11 +75,11 @@ const Blog = () => {
       )}
 
       <style>{`
-        .blog-header {
+        .stories-header {
           margin-bottom: 4rem;
           text-align: center;
         }
-        .blog-title {
+        .stories-title {
           font-size: 3.5rem;
           margin-bottom: 1rem;
           background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
@@ -87,32 +87,32 @@ const Blog = () => {
           -webkit-text-fill-color: transparent;
           display: inline-block;
         }
-        .blog-subtitle {
+        .stories-subtitle {
           font-size: 1.2rem;
           color: var(--text-muted);
         }
-        .blog-list {
+        .stories-list {
           display: flex;
           flex-direction: column;
           gap: 2rem;
         }
-        .blog-card {
+        .story-card {
           padding: 2.5rem;
           transition: var(--transition);
         }
-        .blog-card:hover {
+        .story-card:hover {
           transform: translateY(-4px);
           border-color: var(--primary);
           box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
         }
-        .blog-post-meta {
+        .story-post-meta {
           display: flex;
           align-items: center;
           gap: 0.75rem;
           margin-bottom: 1rem;
           font-size: 0.9rem;
         }
-        .blog-post-category {
+        .story-post-category {
           color: var(--primary);
           font-weight: 600;
           text-transform: uppercase;
@@ -121,15 +121,15 @@ const Blog = () => {
         .meta-divider {
           color: var(--border);
         }
-        .blog-post-date, .blog-post-readtime {
+        .story-post-date, .story-post-readtime {
           color: var(--text-muted);
         }
-        .blog-post-title {
+        .story-post-title {
           font-size: 2rem;
           margin-bottom: 1rem;
           color: var(--text);
         }
-        .blog-post-summary {
+        .story-post-summary {
           font-size: 1.1rem;
           margin-bottom: 1.5rem;
           color: var(--text-muted);
@@ -179,27 +179,27 @@ const Blog = () => {
         }
 
         @media (max-width: 768px) {
-          .blog-header {
+          .stories-header {
             margin-bottom: 2.5rem;
           }
-          .blog-title {
+          .stories-title {
             font-size: 2.5rem;
           }
-          .blog-subtitle {
+          .stories-subtitle {
             font-size: 1.1rem;
           }
-          .blog-card {
+          .story-card {
             padding: 1.75rem;
           }
-          .blog-post-title {
+          .story-post-title {
             font-size: 1.6rem;
             margin-bottom: 0.75rem;
           }
-          .blog-post-summary {
+          .story-post-summary {
             font-size: 1rem;
             margin-bottom: 1.25rem;
           }
-          .blog-post-meta {
+          .story-post-meta {
             font-size: 0.8rem;
             gap: 0.5rem;
           }
@@ -212,4 +212,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Stories;

@@ -1,13 +1,8 @@
 import React from 'react';
+import thoughts from '../data/thoughts.json';
 
 const Thoughts = () => {
-  const thoughts = [
-    { text: "Code is poetry that executes.", author: "Prince Bhalse" },
-    { text: "The best way to predict the future is to build it.", author: "Alan Kay" },
-    { text: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci" },
-    { text: "Architecture is where science and art meet.", author: "Unknown" },
-    { text: "Stay hungry, stay foolish.", author: "Steve Jobs" },
-  ];
+
 
   return (
     <div className="container section-padding">

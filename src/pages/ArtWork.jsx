@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
+import artItems from '../data/artwork.json';
 
 const ArtWork = () => {
   const [filter, setFilter] = useState('All');
 
-  const artItems = [
-    { title: 'Golden Hour', category: 'Paintings', img: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&q=80&w=600' },
-    { title: 'Cyberpunk City', category: 'Digital Art', img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600' },
-    { title: 'Soul Sketch', category: 'Sketches', img: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=600' },
-    { title: 'Abstract Flow', category: 'Paintings', img: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=600' },
-    { title: 'Neon Dream', category: 'Digital Art', img: 'https://images.unsplash.com/photo-1633167606207-d840b5070fc2?auto=format&fit=crop&q=80&w=600' },
-    { title: 'Mountain Line', category: 'Sketches', img: 'https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&q=80&w=600' },
-  ];
 
   const filteredItems = filter === 'All' ? artItems : artItems.filter(item => item.category === filter);
 
