@@ -95,15 +95,29 @@ const StoryDetail = () => {
           </div>
         </header>
 
-        {/* Thumbnail representation */}
-        <div className="post-hero-image" />
+        {/* Hero Image */}
+        <div className="post-hero-image">
+          {story.image ? (
+            <img src={story.image} alt={story.title} className="hero-img" />
+          ) : null}
+        </div>
 
-        {/* Main Content */}
+        {/* Main Content with interleaved scene images */}
         <div className="post-content-container">
           {story.content.map((paragraph, index) => (
-            <p key={index} className="post-paragraph">
-              {paragraph}
-            </p>
+            <React.Fragment key={index}>
+              <p className="post-paragraph">{paragraph}</p>
+              {/* Insert a scene image after every 2nd paragraph */}
+              {story.sceneImages && story.sceneImages[Math.floor(index / 2)] && (index + 1) % 2 === 0 && (
+                <div className="story-scene-image">
+                  <img
+                    src={story.sceneImages[Math.floor(index / 2)]}
+                    alt={`Scene ${Math.floor(index / 2) + 1}`}
+                    className="scene-img"
+                  />
+                </div>
+              )}
+            </React.Fragment>
           ))}
         </div>
 
@@ -193,11 +207,46 @@ const StoryDetail = () => {
         .post-hero-image {
           width: 100%;
           height: 400px;
-          background: linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, rgba(3, 7, 18, 0.9) 100%), rgba(255,255,255,0.01);
           border: 1px solid var(--border);
           border-radius: 2rem;
           margin-bottom: 4rem;
-          box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+          overflow: hidden;
+          position: relative;
+          background: linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, rgba(3, 7, 18, 0.9) 100%);
+          box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+        }
+        .hero-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          display: block;
+          border-radius: 2rem;
+          transition: transform 0.6s ease;
+        }
+        .post-hero-image:hover .hero-img {
+          transform: scale(1.03);
+        }
+        .story-scene-image {
+          width: 100%;
+          border-radius: 1.5rem;
+          overflow: hidden;
+          margin: 1rem 0 2.5rem;
+          border: 1px solid var(--border);
+          box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+          position: relative;
+        }
+        .scene-img {
+          width: 100%;
+          height: 320px;
+          object-fit: cover;
+          object-position: center;
+          display: block;
+          border-radius: 1.5rem;
+          transition: transform 0.6s ease;
+        }
+        .story-scene-image:hover .scene-img {
+          transform: scale(1.02);
         }
         .post-content-container {
           font-size: 1.15rem;
@@ -261,6 +310,17 @@ const StoryDetail = () => {
             height: 250px;
             margin-bottom: 2.5rem;
             border-radius: 1.5rem;
+            overflow: hidden;
+          }
+          .hero-img {
+            border-radius: 1.5rem;
+          }
+          .scene-img {
+            height: 200px;
+            border-radius: 1rem;
+          }
+          .story-scene-image {
+            border-radius: 1rem;
           }
           .post-content-container {
             font-size: 1.05rem;

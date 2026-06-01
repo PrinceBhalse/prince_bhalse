@@ -95,8 +95,12 @@ const BlogPostDetail = () => {
           </div>
         </header>
 
-        {/* Thumbnail representation */}
-        <div className="post-hero-image" />
+        {/* Hero Image */}
+        <div className="post-hero-image">
+          {post.image ? (
+            <img src={post.image} alt={post.title} className="hero-img" />
+          ) : null}
+        </div>
 
         {/* Main Content */}
         <div className="post-content-container">
@@ -193,11 +197,25 @@ const BlogPostDetail = () => {
         .post-hero-image {
           width: 100%;
           height: 400px;
-          background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(3, 7, 18, 0.8) 100%), rgba(255,255,255,0.02);
           border: 1px solid var(--border);
           border-radius: 2rem;
           margin-bottom: 4rem;
-          box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+          overflow: hidden;
+          position: relative;
+          background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(3, 7, 18, 0.8) 100%);
+          box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+        }
+        .hero-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          display: block;
+          border-radius: 2rem;
+          transition: transform 0.6s ease;
+        }
+        .post-hero-image:hover .hero-img {
+          transform: scale(1.03);
         }
         .post-content-container {
           font-size: 1.15rem;
@@ -260,6 +278,10 @@ const BlogPostDetail = () => {
           .post-hero-image {
             height: 250px;
             margin-bottom: 2.5rem;
+            border-radius: 1.5rem;
+            overflow: hidden;
+          }
+          .hero-img {
             border-radius: 1.5rem;
           }
           .post-content-container {

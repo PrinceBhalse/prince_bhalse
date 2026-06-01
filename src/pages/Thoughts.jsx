@@ -7,7 +7,7 @@ const Thoughts = () => {
   return (
     <div className="container section-padding">
       <h1 className="thoughts-title">Daily Musings</h1>
-      
+
       <div className="thoughts-grid">
         {thoughts.map((thought, idx) => (
           <div key={idx} className="glass thought-card">
