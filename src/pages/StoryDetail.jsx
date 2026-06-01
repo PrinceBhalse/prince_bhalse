@@ -102,23 +102,60 @@ const StoryDetail = () => {
           ) : null}
         </div>
 
-        {/* Main Content with interleaved scene images */}
+        {/* Main Content */}
         <div className="post-content-container">
-          {story.content.map((paragraph, index) => (
-            <React.Fragment key={index}>
-              <p className="post-paragraph">{paragraph}</p>
-              {/* Insert a scene image after every 2nd paragraph */}
-              {story.sceneImages && story.sceneImages[Math.floor(index / 2)] && (index + 1) % 2 === 0 && (
-                <div className="story-scene-image">
-                  <img
-                    src={story.sceneImages[Math.floor(index / 2)]}
-                    alt={`Scene ${Math.floor(index / 2) + 1}`}
-                    className="scene-img"
-                  />
+          {story.content.map((paragraph, index) => {
+            // Trim whitespace
+            const text = paragraph.trim();
+            if (!text) return null;
+
+            // 1. Check for standard markdown image: ![alt text](url)
+            const mdImageMatch = text.match(/^!\[(.*?)\]\((.*?)\)$/);
+            if (mdImageMatch) {
+              const [, alt, src] = mdImageMatch;
+              return (
+                <div key={index} className="story-scene-image">
+                  <img src={src} alt={alt} className="scene-img" />
                 </div>
-              )}
-            </React.Fragment>
-          ))}
+              );
+            }
+
+            // 2. Check for bracket image: [image: url] or [image: url|alt]
+            const bracketImageMatch = text.match(/^\[image:\s*(.*?)(?:\|(.*?))?\]$/i);
+            if (bracketImageMatch) {
+              const [, src, alt = "Story Scene"] = bracketImageMatch;
+              return (
+                <div key={index} className="story-scene-image">
+                  <img src={src.trim()} alt={alt.trim()} className="scene-img" />
+                </div>
+              );
+            }
+
+            // 3. Check for H3 heading: ### heading
+            if (text.startsWith('### ')) {
+              return (
+                <h3 key={index} className="story-subheading">
+                  {text.replace('### ', '')}
+                </h3>
+              );
+            }
+
+            // 4. Check for H2 heading: ## heading
+            if (text.startsWith('## ')) {
+              return (
+                <h2 key={index} className="story-heading">
+                  {text.replace('## ', '')}
+                </h2>
+              );
+            }
+
+            // Default: regular paragraph
+            return (
+              <p key={index} className="post-paragraph">
+                {paragraph}
+              </p>
+            );
+          })}
         </div>
 
         {/* Tags footer */}
@@ -258,6 +295,24 @@ const StoryDetail = () => {
         .post-paragraph {
           margin-bottom: 2rem;
           text-align: justify;
+        }
+        .story-heading {
+          font-size: 2.25rem;
+          font-weight: 700;
+          color: var(--text);
+          margin: 3.5rem 0 1.5rem;
+          background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .story-subheading {
+          font-size: 1.75rem;
+          font-weight: 600;
+          color: var(--primary);
+          margin: 3rem 0 1.25rem;
+          letter-spacing: -0.02em;
+          border-left: 4px solid var(--primary);
+          padding-left: 1rem;
         }
         .post-paragraph:first-of-type::first-letter {
           font-size: 3.5rem;

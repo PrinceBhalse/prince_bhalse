@@ -104,11 +104,58 @@ const BlogPostDetail = () => {
 
         {/* Main Content */}
         <div className="post-content-container">
-          {post.content.map((paragraph, index) => (
-            <p key={index} className="post-paragraph">
-              {paragraph}
-            </p>
-          ))}
+          {post.content.map((paragraph, index) => {
+            // Trim whitespace
+            const text = paragraph.trim();
+            if (!text) return null;
+
+            // 1. Check for standard markdown image: ![alt text](url)
+            const mdImageMatch = text.match(/^!\[(.*?)\]\((.*?)\)$/);
+            if (mdImageMatch) {
+              const [, alt, src] = mdImageMatch;
+              return (
+                <div key={index} className="blog-scene-image">
+                  <img src={src} alt={alt} className="scene-img" />
+                </div>
+              );
+            }
+
+            // 2. Check for bracket image: [image: url] or [image: url|alt]
+            const bracketImageMatch = text.match(/^\[image:\s*(.*?)(?:\|(.*?))?\]$/i);
+            if (bracketImageMatch) {
+              const [, src, alt = "Blog Detail Image"] = bracketImageMatch;
+              return (
+                <div key={index} className="blog-scene-image">
+                  <img src={src.trim()} alt={alt.trim()} className="scene-img" />
+                </div>
+              );
+            }
+
+            // 3. Check for H3 heading: ### heading
+            if (text.startsWith('### ')) {
+              return (
+                <h3 key={index} className="blog-subheading">
+                  {text.replace('### ', '')}
+                </h3>
+              );
+            }
+
+            // 4. Check for H2 heading: ## heading
+            if (text.startsWith('## ')) {
+              return (
+                <h2 key={index} className="blog-heading">
+                  {text.replace('## ', '')}
+                </h2>
+              );
+            }
+
+            // Default: regular paragraph
+            return (
+              <p key={index} className="post-paragraph">
+                {paragraph}
+              </p>
+            );
+          })}
         </div>
 
         {/* Tags footer */}
@@ -227,6 +274,45 @@ const BlogPostDetail = () => {
         .post-paragraph {
           margin-bottom: 2rem;
           text-align: justify;
+        }
+        .blog-scene-image {
+          width: 100%;
+          border-radius: 1.5rem;
+          overflow: hidden;
+          margin: 1rem 0 2.5rem;
+          border: 1px solid var(--border);
+          box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+          position: relative;
+        }
+        .scene-img {
+          width: 100%;
+          height: 320px;
+          object-fit: cover;
+          object-position: center;
+          display: block;
+          border-radius: 1.5rem;
+          transition: transform 0.6s ease;
+        }
+        .blog-scene-image:hover .scene-img {
+          transform: scale(1.02);
+        }
+        .blog-heading {
+          font-size: 2.25rem;
+          font-weight: 700;
+          color: var(--text);
+          margin: 3.5rem 0 1.5rem;
+          background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .blog-subheading {
+          font-size: 1.75rem;
+          font-weight: 600;
+          color: var(--primary);
+          margin: 3rem 0 1.25rem;
+          letter-spacing: -0.02em;
+          border-left: 4px solid var(--primary);
+          padding-left: 1rem;
         }
         .post-paragraph:first-of-type::first-letter {
           font-size: 3.5rem;
