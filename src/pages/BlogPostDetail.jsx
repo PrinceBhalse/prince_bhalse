@@ -68,6 +68,11 @@ const BlogPostDetail = () => {
 
   return (
     <div className="container section-padding animate-fade-in">
+      <title>{`${post.title} | Prince Bhalse's Blog`}</title>
+      <meta name="description" content={post.summary || "A blog post by Prince Bhalse."} />
+      {post.tags && post.tags.length > 0 && (
+        <meta name="keywords" content={post.tags.join(', ')} />
+      )}
       {/* Back Navigation */}
       <div className="navigation-header">
         <Link to="/blog" className="back-button">

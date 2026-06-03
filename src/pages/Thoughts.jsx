@@ -6,6 +6,9 @@ const Thoughts = () => {
 
   return (
     <div className="container section-padding">
+      <title>Musings & Thoughts | Prince Bhalse</title>
+      <meta name="description" content="A collection of short thoughts, musings, and quotes by Prince Bhalse." />
+      <meta name="keywords" content="Prince Bhalse Thoughts, Prince Bhalse Quotes, Daily Musings, Prince Bhalse Philosophy" />
       <h1 className="thoughts-title">Daily Musings</h1>
 
       <div className="thoughts-grid">

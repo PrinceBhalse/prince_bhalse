@@ -86,6 +86,9 @@ const Home = () => {
 
   return (
     <div className="container section-padding animate-fade-in">
+      <title>Prince Bhalse | Writer, Poet & Developer</title>
+      <meta name="description" content="Welcome to the digital garden of Prince Bhalse. Explore poetry (Shayari, Nazm, Sher), essays, stories, software projects, and art." />
+      <meta name="keywords" content="Prince Bhalse, Prince Bhalse Shayari, Prince Bhalse Poetry, Prince Bhalse Blog, Prince Bhalse Developer" />
       <HeroCard profileImg={profileImg} />
       
       <div className="home-garden-section">

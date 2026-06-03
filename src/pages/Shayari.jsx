@@ -9,6 +9,9 @@ const Shayari = () => {
 
   return (
     <div className="container section-padding" style={{ textAlign: 'center' }}>
+      <title>The Inkwell - Poetry & Shayari | Prince Bhalse</title>
+      <meta name="description" content="Explore Prince Bhalse's collection of poetry including Urdu Shayari, Sher, Hindi Poems, Gazals, and Nazms." />
+      <meta name="keywords" content="Prince Bhalse Shayari, Prince Bhalse Poetry, Prince Bhalse Poems, Hindi Shayari, Urdu Shayari, Gazal, Nazm, Sher" />
       <header className="shayari-header">
         <h1 className="shayari-title">The Inkwell</h1>
         <p className="shayari-subtitle">Echoes of the soul in words.</p>

@@ -9,6 +9,9 @@ const ArtWork = () => {
 
   return (
     <div className="container section-padding">
+      <title>Art Gallery & Exhibition | Prince Bhalse</title>
+      <meta name="description" content="View sketches, paintings, digital art, and creative exhibitions designed and crafted by Prince Bhalse." />
+      <meta name="keywords" content="Prince Bhalse Art, Digital Art Prince Bhalse, sketches, paintings, exhibition hall" />
       <h1 className="artwork-title">Exhibition Hall</h1>
       
       <div className="artwork-filters">

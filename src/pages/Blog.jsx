@@ -20,6 +20,9 @@ const Blog = () => {
 
   return (
     <div className="container section-padding animate-fade-in">
+      <title>Writings & Insights | Prince Bhalse</title>
+      <meta name="description" content="Read blogs, articles, and essays by Prince Bhalse covering technology, design, minimalism, and personal experiences." />
+      <meta name="keywords" content="Prince Bhalse Blog, Prince Bhalse Writings, Prince Bhalse Essays, Prince Bhalse Articles" />
       <header className="blog-header">
         <h1 className="blog-title">Most Viewed Blogs</h1>
         <p className="blog-subtitle">Insights, tutorials, and stories.</p>

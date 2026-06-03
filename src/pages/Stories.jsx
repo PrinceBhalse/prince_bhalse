@@ -20,6 +20,9 @@ const Stories = () => {
 
   return (
     <div className="container section-padding animate-fade-in">
+      <title>Stories & Narratives | Prince Bhalse</title>
+      <meta name="description" content="Explore original stories, narrative thrillers, crime drama, and fiction written by Prince Bhalse." />
+      <meta name="keywords" content="Prince Bhalse Stories, Prince Bhalse Writer, Prince Bhalse Creative Writing, Prince Bhalse Fiction" />
       <header className="stories-header">
         <h1 className="stories-title">My Stories</h1>
         <p className="stories-subtitle">Tales, narratives, and creative writing.</p>

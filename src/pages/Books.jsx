@@ -10,6 +10,9 @@ const Books = () => {
 
   return (
     <div className="container section-padding">
+      <title>Reading Shelf & Library | Prince Bhalse</title>
+      <meta name="description" content="Discover the books that shaped Prince Bhalse's perspective on software engineering, clean code, architecture, habits, and life." />
+      <meta name="keywords" content="Prince Bhalse Books, Reading List, Software Engineering Books, Clean Architecture, Atomic Habits" />
       <h1 className="books-title">My Library</h1>
       
       {/* Coming Soon Section */}

@@ -68,6 +68,11 @@ const StoryDetail = () => {
 
   return (
     <div className="container section-padding animate-fade-in">
+      <title>{`${story.title} | Prince Bhalse's Stories`}</title>
+      <meta name="description" content={story.summary || "A short story by Prince Bhalse."} />
+      {story.tags && story.tags.length > 0 && (
+        <meta name="keywords" content={story.tags.join(', ')} />
+      )}
       {/* Back Navigation */}
       <div className="navigation-header">
         <Link to="/stories" className="back-button">

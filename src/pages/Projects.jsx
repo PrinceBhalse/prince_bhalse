@@ -7,6 +7,9 @@ const Projects = () => {
 
   return (
     <div className="container section-padding">
+      <title>Software Lab & Projects | Prince Bhalse</title>
+      <meta name="description" content="Explore software engineering projects, web applications, and technical lab experiments built by Prince Bhalse." />
+      <meta name="keywords" content="Prince Bhalse Projects, Prince Bhalse Portfolio, Software Engineer Prince Bhalse, Web Developer" />
       <h1 className="projects-title">Software Lab</h1>
       
       <div className="projects-list">
