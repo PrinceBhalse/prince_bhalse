@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://princebhalse.com</loc>
+    <loc>https://prince-bhalse.vercel.app</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://princebhalse.com/blog</loc>
+    <loc>https://prince-bhalse.vercel.app/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://princebhalse.com/stories</loc>
+    <loc>https://prince-bhalse.vercel.app/stories</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://princebhalse.com/shayari</loc>
+    <loc>https://prince-bhalse.vercel.app/shayari</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://princebhalse.com/thoughts</loc>
+    <loc>https://prince-bhalse.vercel.app/thoughts</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://princebhalse.com/books</loc>
+    <loc>https://prince-bhalse.vercel.app/books</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://princebhalse.com/projects</loc>
+    <loc>https://prince-bhalse.vercel.app/projects</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://princebhalse.com/art-work</loc>
+    <loc>https://prince-bhalse.vercel.app/art-work</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://princebhalse.com/blog/pyaar-aur-prem-ki-khoj</loc>
+    <loc>https://prince-bhalse.vercel.app/blog/pyaar-aur-prem-ki-khoj</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://princebhalse.com/blog/college-notes</loc>
+    <loc>https://prince-bhalse.vercel.app/blog/college-notes</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://princebhalse.com/stories/band-kamre-ek-khaufnak-dastaan</loc>
+    <loc>https://prince-bhalse.vercel.app/stories/band-kamre-ek-khaufnak-dastaan</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

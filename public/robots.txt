@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://princebhalse.com/sitemap.xml
+Sitemap: https://prince-bhalse.vercel.app/sitemap.xml
