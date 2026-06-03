@@ -16,12 +16,12 @@ const Shayari = () => {
 
       {/* Category Filters */}
       <div className="shayari-filters">
-        {['All', 'Shayari', 'Gazal', 'Nazm', 'Geet'].map((cat) => (
-          <button 
-            key={cat} 
+        {['All', 'Shayari', 'Sher', 'Poem', 'Gazal', 'Nazm', 'Geet'].map((cat) => (
+          <button
+            key={cat}
             onClick={() => setFilter(cat)}
             className="filter-btn"
-            style={{ 
+            style={{
               background: filter === cat ? 'var(--primary)' : 'rgba(255,255,255,0.05)',
               borderColor: filter === cat ? 'var(--primary)' : 'var(--border)'
             }}
