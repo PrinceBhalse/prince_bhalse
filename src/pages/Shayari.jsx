@@ -169,7 +169,10 @@ const Shayari = () => {
             gap: 2rem;
           }
           .poetry-card {
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.75rem;
+            max-width: 480px;
+            margin: 0 auto;
+            width: 100%;
           }
           .poetry-title {
             font-size: 1.5rem;
@@ -177,8 +180,9 @@ const Shayari = () => {
           }
           .poetry-content {
             font-size: 1.15rem;
-            line-height: 2rem;
+            line-height: 2.1rem;
             margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
           }
         }
       `}</style>

@@ -360,27 +360,32 @@ const BlogPostDetail = () => {
         }
 
         @media (max-width: 768px) {
+          .blog-post-detail {
+            padding: 0 1.25rem;
+          }
           .navigation-header {
             margin-bottom: 2rem;
+            padding: 0 1.25rem;
           }
           .post-title {
             font-size: 2.25rem;
           }
           .post-hero-image {
-            height: 250px;
+            height: 220px;
             margin-bottom: 2.5rem;
-            border-radius: 1.5rem;
+            border-radius: 1.25rem;
             overflow: hidden;
           }
           .hero-img {
-            border-radius: 1.5rem;
+            border-radius: 1.25rem;
           }
           .post-content-container {
-            font-size: 1.05rem;
-            line-height: 1.75;
+            font-size: 1.1rem;
+            line-height: 1.85;
           }
           .post-paragraph {
             margin-bottom: 1.5rem;
+            text-align: left;
           }
         }
       `}</style>

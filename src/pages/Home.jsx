@@ -22,7 +22,8 @@ const Home = () => {
       contentType: 'Blog',
       link: `/blog/${item.slug}`,
       meta: item.readTime,
-      designType: 'gradient'
+      designType: item.image ? 'media' : 'gradient',
+      thumbnail: item.image || null
     })),
     ...storiesData.map(item => ({
       id: `story-${item.id}-${item.slug}`,
@@ -32,7 +33,8 @@ const Home = () => {
       contentType: 'Story',
       link: `/stories/${item.slug}`,
       meta: item.readTime,
-      designType: 'gradient'
+      designType: item.image ? 'media' : 'gradient',
+      thumbnail: item.image || null
     })),
     ...shayariData.map(item => ({
       id: `shayari-${item.title}-${item.date}`,
