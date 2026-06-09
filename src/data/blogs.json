@@ -67,5 +67,30 @@
       "Friends",
       "Memories"
     ]
+  },
+  {
+    "id": 4,
+    "title": "The Art of Nothing",
+    "slug": "the-art-of-nothing",
+    "summary": "In a world obsessed with constant hustle, learning to sit silently in absolute stillness is where true bliss begins.",
+    "image": "/images/blogs/art-of-nothing-hero.png",
+    "content": [
+      "### The Restless Search for Purpose",
+      "Here I am, again. Purposeless. It is a strange feeling—this sense of being purposeless right before starting a task, and sometimes, even right after completing it. In a world that constantly demands action, speed, and output, feeling this void can be unsettling.",
+      "### Finding Meaning in the Process",
+      "For the longest time, I have found the meaning of life in the process. The acts of creating keep me anchored. Writing a poem, analyzing a complex thesis, or meticulously working on my upcoming plans—these are the things that keep my mind busy and moving forward. They give me a sense of direction.",
+      "### The Ultimate Mastery",
+      "But lately, I have realized something deeper. Apart from the hustle of creating and planning, I believe one must also master the 'Art of Nothing.' True mastery is when you can sit silently in a room without a deadline, without a goal, and without any forced purpose—and yet, not feel bored.",
+      "When the absence of doing something doesn't make you anxious, but instead makes you still; only in that deep, undisturbed silence can one truly encounter 'Bliss.'"
+    ],
+    "category": "Philosophy",
+    "date": "2026-06-09",
+    "readTime": "2 min read",
+    "tags": [
+      "Mindfulness",
+      "Life",
+      "Reflections",
+      "Bliss"
+    ]
   }
 ]
