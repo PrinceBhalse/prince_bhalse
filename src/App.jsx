@@ -1,27 +1,44 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Blog from './pages/Blog';
-import BlogPostDetail from './pages/BlogPostDetail';
-import Stories from './pages/Stories';
-import StoryDetail from './pages/StoryDetail';
-import Shayari from './pages/Shayari';
-import Thoughts from './pages/Thoughts';
-import Books from './pages/Books';
-import Projects from './pages/Projects';
-import ArtWork from './pages/ArtWork';
+import ThemeSwitcher from './components/ThemeSwitcher';
 import './App.css';
+
+// Lazy-load pages for code splitting & better performance
+const Home = lazy(() => import('./pages/Home'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPostDetail = lazy(() => import('./pages/BlogPostDetail'));
+const Stories = lazy(() => import('./pages/Stories'));
+const StoryDetail = lazy(() => import('./pages/StoryDetail'));
+const Shayari = lazy(() => import('./pages/Shayari'));
+const Thoughts = lazy(() => import('./pages/Thoughts'));
+const Books = lazy(() => import('./pages/Books'));
+const Projects = lazy(() => import('./pages/Projects'));
+const ArtWork = lazy(() => import('./pages/ArtWork'));
+
+// Minimal loading spinner
+const PageLoader = () => (
+  <div className="page-loader" role="status" aria-label="Loading page">
+    <div className="page-loader-spinner" />
+  </div>
+);
 
 const Layout = ({ children }) => {
   return (
     <div className="app-container">
+      {/* Skip Navigation - Accessibility */}
+      <a href="#main-content" className="skip-nav">
+        Skip to main content
+      </a>
       <NavBar />
-      <main style={{ minHeight: '80vh' }}>
-        {children}
+      <main id="main-content" style={{ minHeight: '80vh' }} role="main">
+        <Suspense fallback={<PageLoader />}>
+          {children}
+        </Suspense>
       </main>
       <Footer />
+      <ThemeSwitcher />
     </div>
   );
 };

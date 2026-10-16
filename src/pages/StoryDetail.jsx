@@ -1,18 +1,59 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, Clock, Tag } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Tag, Share2, Check } from 'lucide-react';
 import storiesData from '../data/stories.json';
+import LazyImage from '../components/LazyImage';
+import { usePageSEO } from '../hooks/usePageSEO';
 
 const StoryDetail = () => {
   const { slug } = useParams();
+  const [copied, setCopied] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   
   // Find the story matching the slug
   const story = storiesData.find((s) => s.slug === slug);
 
-  // Scroll to top on mount
+  // Dynamic SEO
+  usePageSEO({
+    title: story ? `${story.title} | Prince Bhalse Stories` : 'Story Not Found | Prince Bhalse',
+    description: story?.summary || "A short narrative story by Prince Bhalse.",
+    keywords: story?.tags ? story.tags.join(', ') : 'Prince Bhalse Stories, Creative Fiction',
+    ogImage: story?.image
+  });
+
+  // Scroll to top on mount & track scroll progress
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (totalScroll > 0) {
+        setScrollProgress((window.scrollY / totalScroll) * 100);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [slug]);
+
+  const handleShare = async () => {
+    const url = window.location.href;
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: story.title,
+          text: story.summary,
+          url: url,
+        });
+      } catch {
+        // Fallback
+      }
+    } else {
+      navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   if (!story) {
     return (
@@ -40,6 +81,7 @@ const StoryDetail = () => {
             flex-direction: column;
             align-items: center;
             gap: 1.5rem;
+            border-radius: 1.5rem;
           }
           .error-card h2 {
             font-size: 2.25rem;
@@ -68,17 +110,27 @@ const StoryDetail = () => {
 
   return (
     <div className="container section-padding animate-fade-in">
-      <title>{`${story.title} | Prince Bhalse's Stories`}</title>
-      <meta name="description" content={story.summary || "A short story by Prince Bhalse."} />
-      {story.tags && story.tags.length > 0 && (
-        <meta name="keywords" content={story.tags.join(', ')} />
-      )}
-      {/* Back Navigation */}
+      {/* Reading Progress Bar */}
+      <div 
+        className="reading-progress-bar"
+        style={{ width: `${scrollProgress}%` }}
+        aria-hidden="true"
+      />
+
+      {/* Back Navigation & Share */}
       <div className="navigation-header">
-        <Link to="/stories" className="back-button">
+        <Link to="/stories" className="back-button" aria-label="Return to stories list">
           <ArrowLeft size={18} />
           <span>Back to Stories</span>
         </Link>
+        <button 
+          onClick={handleShare}
+          className="share-button"
+          aria-label="Share this story"
+        >
+          {copied ? <Check size={16} color="var(--primary)" /> : <Share2 size={16} />}
+          <span>{copied ? 'Link Copied!' : 'Share'}</span>
+        </button>
       </div>
 
       <article className="story-post-detail">
@@ -89,28 +141,34 @@ const StoryDetail = () => {
           
           <div className="post-meta-container">
             <div className="meta-item">
-              <Calendar size={15} />
-              <span>{new Date(story.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              <Calendar size={15} aria-hidden="true" />
+              <time dateTime={story.date}>
+                {new Date(story.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
             </div>
-            <div className="meta-divider">•</div>
+            <div className="meta-divider" aria-hidden="true">•</div>
             <div className="meta-item">
-              <Clock size={15} />
+              <Clock size={15} aria-hidden="true" />
               <span>{story.readTime}</span>
             </div>
           </div>
         </header>
 
         {/* Hero Image */}
-        <div className="post-hero-image">
-          {story.image ? (
-            <img src={story.image} alt={story.title} className="hero-img" />
-          ) : null}
-        </div>
+        {story.image && (
+          <div className="post-hero-image">
+            <LazyImage 
+              src={story.image} 
+              alt={story.title} 
+              aspectRatio="16 / 9"
+              className="hero-img" 
+            />
+          </div>
+        )}
 
         {/* Main Content */}
         <div className="post-content-container">
           {story.content.map((paragraph, index) => {
-            // Trim whitespace
             const text = paragraph.trim();
             if (!text) return null;
 
@@ -120,7 +178,7 @@ const StoryDetail = () => {
               const [, alt, src] = mdImageMatch;
               return (
                 <div key={index} className="story-scene-image">
-                  <img src={src} alt={alt} className="scene-img" />
+                  <LazyImage src={src} alt={alt} aspectRatio="16 / 9" className="scene-img" />
                 </div>
               );
             }
@@ -131,7 +189,7 @@ const StoryDetail = () => {
               const [, src, alt = "Story Scene"] = bracketImageMatch;
               return (
                 <div key={index} className="story-scene-image">
-                  <img src={src.trim()} alt={alt.trim()} className="scene-img" />
+                  <LazyImage src={src.trim()} alt={alt.trim()} aspectRatio="16 / 9" className="scene-img" />
                 </div>
               );
             }
@@ -167,7 +225,7 @@ const StoryDetail = () => {
         {story.tags && story.tags.length > 0 && (
           <footer className="post-footer">
             <div className="tags-container">
-              <Tag size={16} className="tag-icon" />
+              <Tag size={16} className="tag-icon" aria-hidden="true" />
               {story.tags.map((tag) => (
                 <span key={tag} className="tag-badge">
                   #{tag}
@@ -179,27 +237,41 @@ const StoryDetail = () => {
       </article>
 
       <style>{`
+        .reading-progress-bar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 3px;
+          background: linear-gradient(90deg, var(--primary), var(--primary-hover));
+          z-index: 1000;
+          transition: width 0.1s ease-out;
+        }
         .navigation-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
           margin-bottom: 3rem;
         }
-        .back-button {
+        .back-button, .share-button {
           display: inline-flex;
           align-items: center;
           gap: 0.75rem;
           color: var(--text-muted);
           font-weight: 500;
-          font-size: 1rem;
+          font-size: 0.95rem;
           transition: var(--transition);
-          padding: 0.5rem 1rem;
+          padding: 0.5rem 1.25rem;
           border-radius: 2rem;
           border: 1px solid var(--border);
           background: rgba(255, 255, 255, 0.02);
+          cursor: pointer;
+          text-decoration: none;
         }
-        .back-button:hover {
+        .back-button:hover, .share-button:hover {
           color: var(--primary);
           border-color: var(--primary);
-          background: rgba(99, 102, 241, 0.05);
-          transform: translateX(-4px);
+          background: rgba(var(--primary-rgb), 0.08);
+          transform: translateY(-2px);
         }
         .story-post-detail {
           max-width: 800px;
@@ -207,23 +279,23 @@ const StoryDetail = () => {
         }
         .post-header {
           text-align: center;
-          margin-bottom: 3rem;
+          margin-bottom: 3.5rem;
         }
         .post-category-badge {
           display: inline-block;
           font-size: 0.85rem;
-          font-weight: 600;
+          font-weight: 700;
           color: var(--primary);
           text-transform: uppercase;
           letter-spacing: 0.15em;
           margin-bottom: 1.25rem;
-          padding: 0.25rem 0.75rem;
+          padding: 0.35rem 0.9rem;
           border-radius: 1rem;
-          background: rgba(99, 102, 241, 0.1);
-          border: 1px solid rgba(99, 102, 241, 0.2);
+          background: rgba(var(--primary-rgb), 0.12);
+          border: 1px solid rgba(var(--primary-rgb), 0.25);
         }
         .post-title {
-          font-size: 3.5rem;
+          font-size: 3.25rem;
           line-height: 1.2;
           margin-bottom: 1.5rem;
           background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
@@ -248,53 +320,19 @@ const StoryDetail = () => {
         }
         .post-hero-image {
           width: 100%;
-          height: 400px;
           border: 1px solid var(--border);
-          border-radius: 2rem;
-          margin-bottom: 4rem;
+          border-radius: 1.75rem;
+          margin-bottom: 3.5rem;
           overflow: hidden;
-          position: relative;
-          background: linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, rgba(3, 7, 18, 0.9) 100%);
-          box-shadow: 0 8px 40px rgba(0,0,0,0.5);
-        }
-        .hero-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
-          display: block;
-          border-radius: 2rem;
-          transition: transform 0.6s ease;
-        }
-        .post-hero-image:hover .hero-img {
-          transform: scale(1.03);
-        }
-        .story-scene-image {
-          width: 100%;
-          border-radius: 1.5rem;
-          overflow: hidden;
-          margin: 1rem 0 2.5rem;
-          border: 1px solid var(--border);
-          box-shadow: 0 4px 30px rgba(0,0,0,0.4);
-          position: relative;
-        }
-        .scene-img {
-          width: 100%;
-          height: 320px;
-          object-fit: cover;
-          object-position: center;
-          display: block;
-          border-radius: 1.5rem;
-          transition: transform 0.6s ease;
-        }
-        .story-scene-image:hover .scene-img {
-          transform: scale(1.02);
+          box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+          background: var(--bg-secondary);
         }
         .post-content-container {
-          font-size: 1.15rem;
-          line-height: 1.85;
-          color: rgba(249, 250, 251, 0.85);
-          font-family: 'Inter', sans-serif;
+          font-size: 1.2rem;
+          line-height: 2;
+          color: var(--text);
+          opacity: 0.92;
+          font-family: 'Playfair Display', Georgia, serif;
           margin-bottom: 4rem;
         }
         .post-paragraph {
@@ -302,96 +340,61 @@ const StoryDetail = () => {
           text-align: justify;
         }
         .story-heading {
-          font-size: 2.25rem;
-          font-weight: 700;
+          font-family: 'Inter', sans-serif;
+          font-size: 2rem;
           color: var(--text);
-          margin: 3.5rem 0 1.5rem;
-          background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          margin: 3rem 0 1.25rem;
+          border-bottom: 1px solid var(--border);
+          padding-bottom: 0.5rem;
         }
         .story-subheading {
-          font-size: 1.75rem;
-          font-weight: 600;
+          font-family: 'Inter', sans-serif;
+          font-size: 1.5rem;
           color: var(--primary);
-          margin: 3rem 0 1.25rem;
-          letter-spacing: -0.02em;
-          border-left: 4px solid var(--primary);
-          padding-left: 1rem;
+          margin: 2rem 0 1rem;
         }
-        .post-paragraph:first-of-type::first-letter {
-          font-size: 3.5rem;
-          float: left;
-          font-weight: 800;
-          line-height: 1;
-          margin-right: 0.75rem;
-          color: var(--primary);
-          font-family: 'Outfit', sans-serif;
+        .story-scene-image {
+          width: 100%;
+          border-radius: 1.5rem;
+          overflow: hidden;
+          margin: 2.5rem 0;
+          border: 1px solid var(--border);
+          box-shadow: 0 4px 30px rgba(0,0,0,0.4);
         }
         .post-footer {
           border-top: 1px solid var(--border);
           padding-top: 2rem;
-          margin-bottom: 4rem;
+          margin-top: 3rem;
         }
         .tags-container {
           display: flex;
-          align-items: center;
           flex-wrap: wrap;
+          align-items: center;
           gap: 0.75rem;
         }
         .tag-icon {
-          color: var(--text-muted);
-          margin-right: 0.5rem;
+          color: var(--primary);
         }
         .tag-badge {
-          font-size: 0.9rem;
-          color: var(--text-muted);
-          padding: 0.35rem 0.85rem;
-          border-radius: 1.5rem;
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid var(--border);
-          transition: var(--transition);
-        }
-        .tag-badge:hover {
+          background: rgba(var(--primary-rgb), 0.1);
           color: var(--primary);
-          border-color: var(--primary);
-          background: rgba(99, 102, 241, 0.05);
-          transform: translateY(-2px);
+          padding: 0.35rem 0.85rem;
+          border-radius: 1rem;
+          font-size: 0.85rem;
+          font-weight: 500;
+          font-family: 'Inter', sans-serif;
+          border: 1px solid rgba(var(--primary-rgb), 0.2);
         }
 
         @media (max-width: 768px) {
-          .story-post-detail {
-            padding: 0 1.25rem;
-          }
-          .navigation-header {
-            margin-bottom: 2rem;
-            padding: 0 1.25rem;
-          }
           .post-title {
             font-size: 2.25rem;
           }
-          .post-hero-image {
-            height: 220px;
-            margin-bottom: 2.5rem;
-            border-radius: 1.25rem;
-            overflow: hidden;
-          }
-          .hero-img {
-            border-radius: 1.25rem;
-          }
-          .scene-img {
-            height: 200px;
-            border-radius: 1rem;
-          }
-          .story-scene-image {
-            border-radius: 1rem;
-          }
           .post-content-container {
             font-size: 1.1rem;
-            line-height: 1.85;
+            line-height: 1.8;
           }
           .post-paragraph {
-            margin-bottom: 1.5rem;
             text-align: left;
           }
         }

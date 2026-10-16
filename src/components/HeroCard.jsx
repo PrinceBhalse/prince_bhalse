@@ -1,32 +1,79 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowDown } from 'lucide-react';
 
-const HeroCard = ({ profileImg }) => {
+const HeroCard = ({ profileImg, profileWebp }) => {
+  const scrollToContent = () => {
+    const nextSection = document.querySelector('.home-garden-section');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="glass animate-fade-in hero-card">
+    <motion.div
+      className="glass hero-card"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+    >
       {/* Decorative Blur */}
-      <div className="hero-blur" />
+      <div className="hero-blur" aria-hidden="true" />
 
       <div className="hero-content">
-        <h1 className="hero-title">
+        <motion.h1
+          className="hero-title"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           Crafting Digital <span style={{ color: 'var(--primary)' }}>Realities.</span>
-        </h1>
-        <p className="hero-desc">
+        </motion.h1>
+        <motion.p
+          className="hero-desc"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+        >
           I'm Prince Bhalse, a software architect, writer, and digital artist. Exploring the intersection of code, literature, and visual storytelling.
-        </p>
-        <button className="hover-btn hero-btn">
+        </motion.p>
+        <motion.button
+          className="hover-btn hero-btn"
+          onClick={scrollToContent}
+          aria-label="Explore my work in the digital garden below"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.96 }}
+        >
           Explore My Work
-        </button>
+          <ArrowDown size={18} style={{ marginLeft: '0.5rem' }} />
+        </motion.button>
       </div>
 
-      <div className="hero-img-container">
+      <motion.div
+        className="hero-img-container"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+      >
         <div className="hero-img-wrapper">
-          <img 
-            src={profileImg} 
-            alt="Prince Bhalse" 
-            className="hero-img"
-          />
+          <picture>
+            {profileWebp && <source srcSet={profileWebp} type="image/webp" />}
+            <img 
+              src={profileImg} 
+              alt="Prince Bhalse - Software Architect, Writer, and Digital Artist" 
+              className="hero-img"
+              width="300"
+              height="300"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+            />
+          </picture>
         </div>
-      </div>
+      </motion.div>
 
       <style>{`
         .hero-card {
@@ -50,6 +97,7 @@ const HeroCard = ({ profileImg }) => {
           filter: blur(150px);
           opacity: 0.2;
           z-index: 0;
+          transition: background 0.5s ease;
         }
 
         .hero-content {
@@ -78,12 +126,16 @@ const HeroCard = ({ profileImg }) => {
           border-radius: 1rem;
           font-weight: 600;
           transition: var(--transition);
+          display: inline-flex;
+          align-items: center;
+          cursor: pointer;
+          border: none;
         }
 
         .hover-btn:hover {
           background: var(--primary-hover);
           transform: translateY(-2px);
-          box-shadow: 0 10px 20px -10px var(--primary);
+          box-shadow: 0 10px 25px -5px rgba(var(--primary-rgb), 0.4);
         }
 
         .hero-img-container {
@@ -96,8 +148,9 @@ const HeroCard = ({ profileImg }) => {
           height: 300px;
           border-radius: 50%;
           border: 4px solid var(--border);
-          padding: 10px;
+          padding: 8px;
           background: linear-gradient(45deg, var(--primary), transparent);
+          transition: border-color 0.5s ease, background 0.5s ease;
         }
 
         .hero-img {
@@ -105,6 +158,7 @@ const HeroCard = ({ profileImg }) => {
           height: 100%;
           border-radius: 50%;
           object-fit: cover;
+          display: block;
         }
 
         @media (max-width: 1024px) {
@@ -139,7 +193,7 @@ const HeroCard = ({ profileImg }) => {
           }
         }
       `}</style>
-    </div>
+    </motion.div>
   );
 };
 

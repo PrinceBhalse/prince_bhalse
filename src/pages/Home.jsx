@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HeroCard from '../components/HeroCard';
+import AnimatedSection from '../components/AnimatedSection';
+import { usePageSEO } from '../hooks/usePageSEO';
 import profileImg from '../assets/profile.png';
+import profileWebp from '../assets/profile.webp';
 
 // Import all content data
 import blogsData from '../data/blogs.json';
@@ -12,6 +15,12 @@ import projectsData from '../data/projects.json';
 import artworkData from '../data/artwork.json';
 
 const Home = () => {
+  usePageSEO({
+    title: 'Prince Bhalse | Writer, Poet & Developer',
+    description: 'Welcome to the digital garden of Prince Bhalse. Explore poetry (Shayari, Nazm, Sher), essays, stories, software projects, and art.',
+    keywords: 'Prince Bhalse, Prince Bhalse Shayari, Prince Bhalse Poetry, Prince Bhalse Blog, Prince Bhalse Developer'
+  });
+
   // Normalize and merge data
   const normalizedContent = [
     ...blogsData.map(item => ({
@@ -88,13 +97,12 @@ const Home = () => {
 
   return (
     <div className="container section-padding animate-fade-in">
-      <title>Prince Bhalse | Writer, Poet & Developer</title>
-      <meta name="description" content="Welcome to the digital garden of Prince Bhalse. Explore poetry (Shayari, Nazm, Sher), essays, stories, software projects, and art." />
-      <meta name="keywords" content="Prince Bhalse, Prince Bhalse Shayari, Prince Bhalse Poetry, Prince Bhalse Blog, Prince Bhalse Developer" />
-      <HeroCard profileImg={profileImg} />
+      <HeroCard profileImg={profileImg} profileWebp={profileWebp} />
       
-      <div className="home-garden-section">
+      <AnimatedSection className="home-garden-section">
         <h2 className="home-garden-title">Latest From The Garden</h2>
+        <p className="home-garden-subtitle">Recent stories, poems, insights, and experiments freshly cultivated.</p>
+        
         <div className="home-garden-grid">
           {latestGardenEntries.map((entry) => (
             <Link to={entry.link} key={entry.id} className="glass garden-card">
@@ -131,12 +139,12 @@ const Home = () => {
                 <span>•</span>
                 <span>{entry.meta}</span>
               </div>
-              <h3>{entry.title}</h3>
+              <h3 className="garden-card-heading">{entry.title}</h3>
               <p className="garden-card-summary">{entry.summary}</p>
             </Link>
           ))}
         </div>
-      </div>
+      </AnimatedSection>
 
       <style>{`
         .home-garden-section {
@@ -145,11 +153,16 @@ const Home = () => {
         }
         .home-garden-title {
           font-size: 3rem;
-          margin-bottom: 2rem;
+          margin-bottom: 0.75rem;
           background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           display: inline-block;
+        }
+        .home-garden-subtitle {
+          color: var(--text-muted);
+          font-size: 1.1rem;
+          margin-bottom: 3rem;
         }
         .home-garden-grid {
           display: grid;
@@ -162,19 +175,21 @@ const Home = () => {
           display: flex;
           flex-direction: column;
           transition: var(--transition);
+          border-radius: 1.5rem;
+          text-decoration: none;
         }
         .garden-card:hover {
           transform: translateY(-5px);
           border-color: var(--primary);
-          box-shadow: 0 15px 30px rgba(99, 102, 241, 0.1);
+          box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.15);
         }
-        .garden-card h3 {
+        .garden-card-heading {
           font-size: 1.5rem;
           margin-bottom: 0.75rem;
           color: var(--text);
           transition: var(--transition);
         }
-        .garden-card:hover h3 {
+        .garden-card:hover .garden-card-heading {
           color: var(--primary);
         }
         .garden-card-summary {
@@ -204,7 +219,7 @@ const Home = () => {
           position: absolute;
           width: 100%;
           height: 100%;
-          background: radial-gradient(circle at center, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+          background: radial-gradient(circle at center, rgba(var(--primary-rgb), 0.2) 0%, transparent 70%);
           opacity: 0;
           transition: var(--transition);
           top: 0;
@@ -214,10 +229,10 @@ const Home = () => {
           opacity: 1;
         }
         .gradient-bg {
-          background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%), rgba(255,255,255,0.01);
+          background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.15) 0%, rgba(168, 85, 247, 0.1) 100%), var(--card-bg);
         }
         .poetry-bg {
-          background: linear-gradient(135deg, rgba(251, 191, 36, 0.05) 0%, rgba(217, 70, 239, 0.05) 100%), rgba(255,255,255,0.01);
+          background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.1) 0%, rgba(217, 70, 239, 0.08) 100%), var(--card-bg);
         }
         .poetry-excerpt {
           font-family: 'Playfair Display', serif;
@@ -231,12 +246,12 @@ const Home = () => {
           z-index: 1;
         }
         .thought-bg {
-          background: linear-gradient(135deg, rgba(45, 212, 191, 0.05) 0%, rgba(99, 102, 241, 0.05) 100%), rgba(255,255,255,0.01);
+          background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.1) 0%, rgba(45, 212, 191, 0.08) 100%), var(--card-bg);
         }
         .quote-mark {
           font-size: 5rem;
           font-family: 'Outfit', sans-serif;
-          color: rgba(99, 102, 241, 0.15);
+          color: rgba(var(--primary-rgb), 0.25);
           line-height: 0;
           margin-top: 2rem;
           z-index: 1;
@@ -249,8 +264,8 @@ const Home = () => {
           letter-spacing: 0.1em;
           padding: 0.35rem 0.75rem;
           border-radius: 0.5rem;
-          background: rgba(99, 102, 241, 0.1);
-          border: 1px solid rgba(99, 102, 241, 0.2);
+          background: rgba(var(--primary-rgb), 0.15);
+          border: 1px solid rgba(var(--primary-rgb), 0.3);
           z-index: 1;
           position: absolute;
           top: 0.75rem;
@@ -271,7 +286,10 @@ const Home = () => {
           }
           .home-garden-title {
             font-size: 2.25rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
+          }
+          .home-garden-subtitle {
+            margin-bottom: 2rem;
           }
           .home-garden-grid {
             grid-template-columns: 1fr;

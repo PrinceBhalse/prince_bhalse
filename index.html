@@ -4,26 +4,71 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#030712" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://prince-bhalse.vercel.app/" />
+
+    <!-- Performance: Preconnect to Font CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <!-- Primary Meta Tags -->
     <title>Prince Bhalse | Writer, Poet & Developer</title>
     <meta name="title" content="Prince Bhalse | Writer, Poet & Developer" />
     <meta name="description" content="Welcome to the digital garden of Prince Bhalse. Explore poetry (Shayari, Nazm, Sher), essays, stories, software projects, and art." />
-    <meta name="keywords" content="Prince Bhalse, Prince Bhalse Shayari, Prince Bhalse Poetry, Prince Bhalse Blog, Prince Bhalse Developer" />
+    <meta name="keywords" content="Prince Bhalse, Prince Bhalse Shayari, Prince Bhalse Poetry, Prince Bhalse Blog, Prince Bhalse Developer, software architect, portfolio" />
     <meta name="author" content="Prince Bhalse" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://prince-bhalse.vercel.app/" />
+    <meta property="og:site_name" content="Prince Bhalse" />
     <meta property="og:title" content="Prince Bhalse | Writer, Poet & Developer" />
     <meta property="og:description" content="Welcome to the digital garden of Prince Bhalse. Explore poetry, stories, software projects, and art." />
     <meta property="og:image" content="https://prince-bhalse.vercel.app/profile.png" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1024" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://prince-bhalse.vercel.app/" />
-    <meta property="twitter:title" content="Prince Bhalse | Writer, Poet & Developer" />
-    <meta property="twitter:description" content="Explore poetry, stories, software projects, and art by Prince Bhalse." />
-    <meta property="twitter:image" content="https://prince-bhalse.vercel.app/profile.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://prince-bhalse.vercel.app/" />
+    <meta name="twitter:title" content="Prince Bhalse | Writer, Poet & Developer" />
+    <meta name="twitter:description" content="Explore poetry, stories, software projects, and art by Prince Bhalse." />
+    <meta name="twitter:image" content="https://prince-bhalse.vercel.app/profile.png" />
+
+    <!-- JSON-LD Structured Data for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://prince-bhalse.vercel.app/#person",
+          "name": "Prince Bhalse",
+          "url": "https://prince-bhalse.vercel.app/",
+          "image": "https://prince-bhalse.vercel.app/profile.png",
+          "jobTitle": "Software Architect, Writer & Poet",
+          "sameAs": [
+            "https://www.linkedin.com/in/princebhalse/",
+            "https://github.com/princebhalse",
+            "https://x.com/Princebhalse",
+            "https://www.instagram.com/princebhalse92/",
+            "https://medium.com/@princebhalse"
+          ],
+          "knowsAbout": ["Software Engineering", "Full Stack Development", "Poetry", "Creative Writing", "Digital Art"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://prince-bhalse.vercel.app/#website",
+          "url": "https://prince-bhalse.vercel.app/",
+          "name": "Prince Bhalse Digital Garden",
+          "description": "Portfolio, essays, poetry, and software lab of Prince Bhalse.",
+          "publisher": { "@id": "https://prince-bhalse.vercel.app/#person" }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import AnimatedSection from '../components/AnimatedSection';
+import { usePageSEO } from '../hooks/usePageSEO';
 import storiesData from '../data/stories.json';
 
 const Stories = () => {
+  usePageSEO({
+    title: 'Stories & Narratives | Prince Bhalse',
+    description: 'Explore original stories, narrative thrillers, crime drama, and fiction written by Prince Bhalse.',
+    keywords: 'Prince Bhalse Stories, Prince Bhalse Writer, Prince Bhalse Creative Writing, Prince Bhalse Fiction, Short Stories'
+  });
+
   // Sort stories by date descending
   const sortedStories = [...storiesData].sort((a, b) => new Date(b.date) - new Date(a.date));
 
@@ -20,47 +28,47 @@ const Stories = () => {
 
   return (
     <div className="container section-padding animate-fade-in">
-      <title>Stories & Narratives | Prince Bhalse</title>
-      <meta name="description" content="Explore original stories, narrative thrillers, crime drama, and fiction written by Prince Bhalse." />
-      <meta name="keywords" content="Prince Bhalse Stories, Prince Bhalse Writer, Prince Bhalse Creative Writing, Prince Bhalse Fiction" />
       <header className="stories-header">
-        <h1 className="stories-title">My Stories</h1>
-        <p className="stories-subtitle">Tales, narratives, and creative writing.</p>
+        <h1 className="stories-title">Stories & Narratives</h1>
+        <p className="stories-subtitle">Tales of mystery, crime drama, suspense, and human nature.</p>
       </header>
 
-      <div className="stories-list">
-        {currentStories.map((story) => (
-          <article key={story.id} className="glass story-card">
-            <div className="story-post-meta">
-              <span className="story-post-category">{story.category}</span>
-              <span className="meta-divider">•</span>
-              <span className="story-post-date">
-                {new Date(story.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-              </span>
-              <span className="meta-divider">•</span>
-              <span className="story-post-readtime">{story.readTime}</span>
-            </div>
-            <h2 className="story-post-title">{story.title}</h2>
-            <p className="story-post-summary">{story.summary}</p>
-            <Link to={`/stories/${story.slug}`} className="read-more-btn">
-              Read Story <span className="arrow">→</span>
-            </Link>
-          </article>
-        ))}
-      </div>
+      <AnimatedSection>
+        <div className="stories-list">
+          {currentStories.map((story) => (
+            <article key={story.id} className="glass story-card">
+              <div className="story-post-meta">
+                <span className="story-post-category">{story.category}</span>
+                <span className="meta-divider" aria-hidden="true">•</span>
+                <time className="story-post-date" dateTime={story.date}>
+                  {new Date(story.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+                <span className="meta-divider" aria-hidden="true">•</span>
+                <span className="story-post-readtime">{story.readTime}</span>
+              </div>
+              <h2 className="story-post-title">
+                <Link to={`/stories/${story.slug}`} className="story-title-link">
+                  {story.title}
+                </Link>
+              </h2>
+              <p className="story-post-summary">{story.summary}</p>
+              <Link to={`/stories/${story.slug}`} className="read-more-btn" aria-label={`Read story: ${story.title}`}>
+                Read Story <span className="arrow" aria-hidden="true">→</span>
+              </Link>
+            </article>
+          ))}
+        </div>
+      </AnimatedSection>
 
       {totalPages > 1 && (
-        <div className="pagination">
+        <nav className="pagination" aria-label="Stories pagination">
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
             <button
               key={page}
               onClick={() => setCurrentPage(page)}
-              className="page-btn"
-              style={{
-                background: currentPage === page ? 'var(--primary)' : 'rgba(255, 255, 255, 0.02)',
-                borderColor: currentPage === page ? 'var(--primary)' : 'var(--border)',
-                color: '#ffffff'
-              }}
+              className={`page-btn ${currentPage === page ? 'active' : ''}`}
+              aria-label={`Go to page ${page}`}
+              aria-current={currentPage === page ? 'page' : undefined}
             >
               {page}
             </button>
@@ -68,13 +76,13 @@ const Stories = () => {
           {currentPage < totalPages && (
             <button 
               onClick={() => setCurrentPage((prev) => prev + 1)} 
-              className="page-btn"
-              style={{ width: 'auto', padding: '0 1.25rem', borderRadius: '2rem' }}
+              className="page-btn next-btn"
+              aria-label="Next page"
             >
-              Next
+              Next →
             </button>
           )}
-        </div>
+        </nav>
       )}
 
       <style>{`
@@ -101,12 +109,13 @@ const Stories = () => {
         }
         .story-card {
           padding: 2.5rem;
+          border-radius: 1.5rem;
           transition: var(--transition);
         }
         .story-card:hover {
           transform: translateY(-4px);
           border-color: var(--primary);
-          box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+          box-shadow: 0 20px 40px rgba(var(--primary-rgb), 0.15);
         }
         .story-post-meta {
           display: flex;
@@ -130,7 +139,14 @@ const Stories = () => {
         .story-post-title {
           font-size: 2rem;
           margin-bottom: 1rem;
+        }
+        .story-title-link {
           color: var(--text);
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+        .story-title-link:hover {
+          color: var(--primary);
         }
         .story-post-summary {
           font-size: 1.1rem;
@@ -145,6 +161,7 @@ const Stories = () => {
           align-items: center;
           gap: 0.5rem;
           cursor: pointer;
+          text-decoration: none;
         }
         .read-more-btn .arrow {
           transition: transform 0.3s ease;
@@ -162,23 +179,34 @@ const Stories = () => {
           gap: 1rem;
         }
         .page-btn {
-          width: 40px;
-          height: 40px;
+          width: 44px;
+          height: 44px;
           display: flex;
           align-items: center;
           justify-content: center;
           border: 1px solid var(--border);
           border-radius: 50%;
           color: var(--text);
-          background: rgba(255, 255, 255, 0.02);
-          font-weight: 500;
+          background: rgba(255, 255, 255, 0.03);
+          font-weight: 600;
           transition: var(--transition);
+          cursor: pointer;
         }
         .page-btn:hover {
-          background: var(--primary) !important;
-          border-color: var(--primary) !important;
-          color: #ffffff;
+          border-color: var(--primary);
+          color: var(--primary);
           transform: translateY(-2px);
+        }
+        .page-btn.active {
+          background: var(--primary);
+          border-color: var(--primary);
+          color: #ffffff;
+          box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.35);
+        }
+        .page-btn.next-btn {
+          width: auto;
+          padding: 0 1.5rem;
+          border-radius: 2rem;
         }
 
         @media (max-width: 768px) {

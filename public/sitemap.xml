@@ -51,6 +51,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://prince-bhalse.vercel.app/blog/the-art-of-nothing</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://prince-bhalse.vercel.app/stories/band-kamre-ek-khaufnak-dastaan</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
