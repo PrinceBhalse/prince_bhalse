@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "The Liar's Game",
+    "series": "The Elara Voss Investigations — Book One",
+    "tagline": "The room is the womb and the tomb",
+    "author": "Prince Bhalse",
+    "coverImage": "/images/books/the-liars-game.png",
+    "amazonUrl": "https://www.amazon.in/dp/B0HNP51DGP",
+    "asin": "B0HNP51DGP",
+    "publicationDate": "October 20, 2026",
+    "pages": "544 pages",
+    "format": "Kindle Edition / eBook",
+    "language": "English",
+    "genre": "Crime, Mystery & Thriller",
+    "price": "₹284 (Free with Kindle Unlimited)",
+    "status": "Available Now",
+    "synopsis": [
+      "Around her, the world was on fire with a graduate's worth of goodbyes. On the banister, Mira Chen left behind everything that would have made her recognizable: her denim jacket, a black notebook, and a key she was never supposed to find. Elara Voss walked away from the party, crossed the campus lawn, and opened that key's door to find something the university had been keeping beneath its oldest library for a hundred years.",
+      "A room that official blueprints say does not exist.",
+      "A ledger of a secret society whispering through every board, every department, every murder disguised as accident for a century.",
+      "A list of dead men with Elara's name already at the bottom.",
+      "There is only one way out of a hundred-year secret: prove the account, destroy the room, and make the society's own history undo them. But the deeper Elara descends, the harsher the truth becomes: the room was not hidden from her. It was waiting for her. And the last entry in the ledger already knows her name."
+    ],
+    "pitch": "A whip-smart, candlelit thriller about secret societies, hidden rooms, and the women who read the world for what is missing.",
+    "features": [
+      { "label": "Format", "value": "Kindle eBook" },
+      { "label": "Length", "value": "544 Pages" },
+      { "label": "Language", "value": "English" },
+      { "label": "ASIN", "value": "B0HNP51DGP" },
+      { "label": "Series", "value": "The Elara Voss Investigations (Book 1)" }
+    ],
+    "tags": ["Dark Academia", "Secret Societies", "Psychological Thriller", "Murder Mystery", "Gothic Fiction"]
+  }
+]

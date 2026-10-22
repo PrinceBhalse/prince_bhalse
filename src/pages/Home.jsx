@@ -13,6 +13,7 @@ import shayariData from '../data/shayari.json';
 import thoughtsData from '../data/thoughts.json';
 import projectsData from '../data/projects.json';
 import artworkData from '../data/artwork.json';
+import booksData from '../data/books.json';
 
 const Home = () => {
   usePageSEO({
@@ -86,6 +87,17 @@ const Home = () => {
       link: `/art-work`,
       meta: item.category,
       thumbnail: item.img,
+      designType: 'media'
+    })),
+    ...booksData.map(item => ({
+      id: `book-${item.id}`,
+      title: item.title,
+      summary: item.pitch || item.tagline,
+      date: '2026-10-20',
+      contentType: 'Book',
+      link: `/books`,
+      meta: 'Debut Novel',
+      thumbnail: item.coverImage,
       designType: 'media'
     }))
   ];
