@@ -1,0 +1,337 @@
+# Prince Bhalse - Complete Content Archive
+
+> Comprehensive text dump and documentation of writings, poetry, fiction, and software engineering projects by Prince Bhalse.
+> Website: https://prince-bhalse.vercel.app
+
+---
+
+## 1. About Prince Bhalse
+Prince Bhalse is a Software Architect, Writer, and Poet based in India. His work spans full-stack software development, decentralized applications, AI tooling, literary fiction, philosophical essays, and Hindi/Urdu poetry.
+
+Social & Code Profiles:
+- Website: https://prince-bhalse.vercel.app
+- GitHub: https://github.com/princebhalse
+- LinkedIn: https://www.linkedin.com/in/princebhalse/
+- Twitter / X: https://x.com/Princebhalse
+- Instagram: https://www.instagram.com/princebhalse92/
+- Medium: https://medium.com/@princebhalse
+
+---
+
+## 2. Software Projects
+
+### 2.1 Veritas
+Veritas is a decentralized, multi-signature document verification system built on the Ethereum blockchain and IPFS that establishes an immutable, zero-trust chain of custody to prevent fraud and ensure mathematical proof of document authenticity.
+
+- Live Application: https://veritas-gamma-ebon.vercel.app/
+- Source Code: https://github.com/PrinceBhalse/secure_doc_workflow
+- Date: 2026-05-27
+
+### 2.2 AI Data Analysis
+Data Analytics tool which can generate chart based summary.
+
+- Live Application: https://ai-data-analysis-kappa.vercel.app/
+- Source Code: https://github.com/PrinceBhalse/ai-data-analysis
+- Date: 2026-05-22
+
+### 2.3 Movie Recommendation System
+A collaborative filtering based movie recommendation system based on tmdb dataset.
+
+- Live Application: https://movierecommendationsystem-rlyq.onrender.com/
+- Source Code: https://github.com/PrinceBhalse/MovieRecommendationSystem
+- Date: 2026-05-11
+
+---
+
+## 3. Books & Publications
+
+### 3.1 The Liar's Game
+Series: The Elara Voss Investigations — Book One
+Tagline: The room is the womb and the tomb
+Format: Kindle Edition / eBook | 544 pages
+Amazon URL: https://www.amazon.in/dp/B0HNP51DGP
+
+Synopsis:
+Around her, the world was on fire with a graduate's worth of goodbyes. On the banister, Mira Chen left behind everything that would have made her recognizable: her denim jacket, a black notebook, and a key she was never supposed to find. Elara Voss walked away from the party, crossed the campus lawn, and opened that key's door to find something the university had been keeping beneath its oldest library for a hundred years.
+
+A room that official blueprints say does not exist.
+
+A ledger of a secret society whispering through every board, every department, every murder disguised as accident for a century.
+
+A list of dead men with Elara's name already at the bottom.
+
+There is only one way out of a hundred-year secret: prove the account, destroy the room, and make the society's own history undo them. But the deeper Elara descends, the harsher the truth becomes: the room was not hidden from her. It was waiting for her. And the last entry in the ledger already knows her name.
+
+---
+
+## 4. Blog Posts & Essays
+
+### 4.1 Prem
+URL: https://prince-bhalse.vercel.app/blog/pyaar-aur-prem-ki-khoj
+Date: 2026-05-17 | Category: Philosophy
+Summary: Meko pyaar kese ho sakta hai? Kashi ke kinare se lekar Premanand Ji aur Acharya Prashant ke vicharon tak, prem ki ek adhuri khoj.
+
+Meko pyaar kese ho sakta hai, ya meko kisi se itni attachment kese ho sakti hai. Bada hi mushkil sawal hai, jiska koe jawab nahi. Shayad kashi ke kinare ya barsana ke pahado me agr me chilla ke puchu ki ye kya hai to meri aawaj sirf gunjti hi reh jayegi or koe jawab nahi aayegi, kyoki shayad khud bhagwan ke paas bhi iska jawab nahi or iska jawab dhundne ke liye unhone hume banaya taki hum unke liye jawab dhund sake.
+
+Pehle hume ye janna hoga ki pyaar kya hai phir hum apne sawalo ke behtar jawab dhund payenge.
+
+Premanand Ji Maharaj ke vichar:
+
+"सत चित आनंद मे प्रेम है"
+
+"प्रतिक्षण वर्धमानम मे"
+
+"कामना रहितम में"
+
+"सूक्ष्म तरम"
+
+"अनुभव स्वरूपम"
+
+Ek sundar vichar (Clip):
+
+अगर कोई आपके दिल के हजारो टूकरे कर दें ओर आप हर टूकरे से उसे प्रेम करे ये प्रेम है।
+
+Acharya Prashant ke anusar:
+
+"मन की बेचैनी का चैन के प्रति खिंचाव ही प्रेम है"
+
+"हम जैसे हमें कोई वेसे ही स्वीकार करें ये प्रेम नहीं है पर जो हमें बेहतर बनने पे मजबूर करे ये प्रेम है"
+
+Subne achhi baate boli par kuch aur hai jo jaanana baaki hai.
+
+### 4.2 College Notes
+URL: https://prince-bhalse.vercel.app/blog/college-notes
+Date: 2025-12-05 | Category: Life
+Summary: College khatam, dosti aur yaadein hamesha dil me rahengi.
+
+Happy Goodbye
+
+7th semester or shayad final year bhi yaha khatam hota hai, shayad ab hum pehle ke jaise shaam me na ghum sake, shayad ab sath gym na Jaya kare, ho sakta hai ab college ke liye niklte wakt ek dusre ko call krne ki jarurat na pade. Lekin, kabhi to ye din aana hi tha. Ab ghumne niklte wakt kisi ka intazar nhi rahega wapas jate wakt koe aakhri ummid nhi rahegi pr ye intazar ye ummid bohot yaad aayegi. 4 year dosto 4 saal khatam ho gaye. 
+
+### 4.3 The Art of Nothing
+URL: https://prince-bhalse.vercel.app/blog/the-art-of-nothing
+Date: 2026-06-09 | Category: Philosophy
+Summary: Apart from the hustle of creating and planning, I believe one should also master the 'Art of Nothing'.
+
+Here I am, again purposeless. I feel purposeless before doing anything, and even after doing anything.
+
+I find the meaning of life in the process. Writing a poem, analyzing a thesis, or working on my upcoming plans keeps me busy.
+
+But apart from this, I believe one should also master the 'Art of Nothing'. When sitting silently without any purpose doesn't make you feel bored, only then can one find true 'Bliss'.
+
+---
+
+## 5. Fiction & Stories
+
+### 5.1 Chaar Chor
+URL: https://prince-bhalse.vercel.app/stories/band-kamre-ek-khaufnak-dastaan
+Date: 2026-05-28 | Category: Crime
+Summary: Ek sunsaan ghar, chaar bekhauf chor aur ek aisi raat jiska andhera unki rooh ko hamesha ke liye nigal gaya.
+
+### Scene 1: बंद कमरे (Band Kamre)
+
+![Scene 1: Band Kamre](/images/stories/4chor-scene1.png)
+
+Raat ke lagbhag barah baj rahe the. Ek andheri gali ke kone mein, charo chor apne purane adde par baithe hue the. Charon ke beech ek choti si mombatti jal rahi thi, jiske ujaale mein unke chehre aur khaufnak lag rahe the. Tabhi pehla chor baki teeno ke paas aakar dheere se bolta hai, 'Bhaiyo, ek bada jackpot hath laga hai. Ek bohot bada sa ghar hai jahan ek aurat apne 28 saal ke ladke ke sath rehti hai. Mujhe khabar mili hai ki wo dono kal hi apne gaon ja rahe hain, yani pura ground floor ekdum khaali rahega.'
+
+Yeh sunkar baaki choron ki aankhon mein chamak aa jaati hai. Wo aage bolta hai, 'Is mauke ka fayda uthakar hum theek raat ko wahan pahunchenge. Par ek chota sa panga hai—wahan first floor par ek ladki rent se akeli rehti hai. Lekin fikr ki koi baat nahi, raat tak wo so chuki hogi. Hum chupke se uske kamre mein ghusenge, use chloroform sungha kar behosh kar denge, aur fir chupchap poore ghar mein chori karke subah hone se pehle wahan se nikal jayenge.' Charon aapas mein ek ghinoni muskaan badalte hain. Plan ekdum taiyar tha.
+
+### Scene 2: दबे पाँव (Dabe Paon)
+
+![Scene 2: Dabe Paon](/images/stories/4chor-scene2.png)
+
+Theek raat ke do baje, jab poore mohalle mein sannaata tha, charo chor us bade ghar ke paas pahunche. Pure ghar mein andhera tha. Main gate ke andar ghuste hi samne upar jaane wali sidiya dikhayi di. Wo chaaron dabe पांव, bina koi aawaz kiye sidiya chadhne lage.
+
+Jaise hi wo upar pahuche, unhone dekha ki ladki ke kamre ka darwaza pehle se hi thoda khula hua tha. Unhone halke se dhakka diya aur chloroform ka kapda hath mein liye jaise hi andar ghuse, charon ke hosh ud gaye. Unki aankhein fati ki fati reh gayi. Samne pankhe se us ladki ki laash latak rahi thi. Kamre mein ek ajeeb si silsili aur bhayanak thandak thi. Wo ladki B.Tech final semester mein thi, jo kab se placement ki tayyari kar rahi thi par job na lagne ki wajah se depression mein aa chuki thi. Har taraf se haar maankar usne aaj raat hi khudkushi kar li thi. Chor jo chori karne aaye the, samne maut ko is tarah dekhkar ekdum sunn reh gaye.
+
+### Scene 3: कोहराम (Kohraam)
+
+![Scene 3: Kohraam](/images/stories/4chor-scene3.png)
+
+Pankhe se latakti us laash ko dekhkar charo ka sharir darr ke maare kaampne laga. Kisi ke gale se aawaz tak nahi nikal rahi thi. Tabhi pehla chor haanpte hue dabe aawaz mein bola, 'Bhai, jaldi se jo milta hai uthao aur bhago yahan se!'
+
+Doosra chor apna sir pakadkar kaampte hue bola, 'Kaisi chori be? Agar hamara koi sabut yahan chhut gaya, toh police chori nahi, seedhe khoon ka keis banayegi. Mujhe jail nahi jana, bhago yahan se!' Kamre mein maut ka sannaata tha aur wo dono bhaagne ki zidd kar rahe the.
+
+Tabhi teesra chor, jo laash ke jism ko upar se neeche tak lagatar ghoore ja raha tha, ek kadam aage badha. Uske darr ki jagah uski aankhon mein ek ghinoni chamak aa gayi. Wo baaki teeno ko dekhkar ek ghinoni hansi ke sath bola, 'Tum sab darpok ho. Itna bada mauka baar-baar nahi milta. Aaj paise ki pyaas aur badan ki pyaas, dono ek saath bujhayenge.' Uski is baat ne bache hue teeno choro ke dimaag ka darr ek jhatke mein behad ghinoni hawas mein badal diya. Unka dimaag bilkul andha ho chuka tha. Unhone ek doosre ko dekha aur sab is ghinone kaam ke liye taiyar ho gaye.
+
+Unhone jaldi-jaldi us ladki ki laash ko pankhe se neeche utara aur zameen par lita diya. Ladki ka jism ekdum thanda aur bejaan pad chuka tha. Unhone ladki ke kapde ek-ek karke faad diye. Wo ek bejaan laash thi, par wo darinde us thande, nange jism par toot pade. Koi uske chehre ko noch raha tha, toh koi us bejaan badan ke sath zabardasti kar raha tha. Kamre mein sirf un darindon ke haanpne ki aur laash ke nange jism ke zameen par ghisatne ki aawazain aa rahi thin. Unhone us bejaan badan ke sath wo sab kiya jo ek zinda insaan soch bhi nahi sakta, unki hawas ne laash ko bhi nahi bakhsha.
+
+### Scene 4: सन्नाटा (Sannata)
+
+![Scene 4: Sannata](/images/stories/4chor-scene4.png)
+
+Jab un chaaron ka mann us bejaan jism se bhar gaya, toh unhone use wahin mitti aur miley hue kapdon ke beech chhod diya. Unke chehro par ab koi darr ya pachtawa nahi tha, balki ek ajeeb sa sukoon tha. Wo chupchap neeche ground floor par aaye, duplicate chabi se tala khola, aur poore ghar ka keish aur gehne samet liye. Subah ki pehli kiran nikalne se pehle hi, wo chaaron us ghar se maal lekar nikal gaye aur subah ke andhere mein kahin gayab ho gaye, peeche chhod gaye ek laash aur ek behad khaufnak dastaan.
+
+---
+
+## 6. Shayari, Nazm & Poetry Collection
+
+### 6.1 Aapsi Guftagu (Nazm)
+Date: 2026-04-23
+
+जो नज़रें चुरा के करे, वो होती है मोहब्बत
+और जब नज़रें मिलने लगे तो उसे इक़रार कहते हैं।
+
+भालसे, हमें नहीं मिले इक़रार के इशारे
+हम तो उनकी तवज्जो को तरसते रहे।
+
+मत कर उसके आने की उम्मीद, भालसे
+जो apna होता है वो तड़पाया नहीं करते।
+
+तड़पा पा रहा है इसी लिए तो अपना है
+वरना हम गैरों की बातों का तो बुरा नहीं माना करते।
+
+
+
+### 6.2 Daur-e-Mohabbat (Shayari)
+Date: 2025-06-18
+
+पा कर भी नहीं मिलेगा
+खो कर भी नहीं मिलेगा
+दौर-ए-मोहब्बत बीत गया है
+अब सुकून नहीं मिलेगा
+
+### 6.3 Intezar (Nazm)
+Date: 2025-11-06
+
+जो तू गया मुझसे दूर
+तो मैं भी कहीं खो जाऊंगा
+मर जाऊंगा मगर फिर
+सामने नहीं आऊंगा
+
+तेरी यादें, तेरी उम्मीद और
+ये तेरा इंतज़ार अच्छा है
+मगर
+यूँही और तड़पाओगी तो
+मर जाऊंगा।
+
+### 6.4 Ek Jhalak (Sher)
+Date: 2025-11-06
+
+अगर शैतान मुझसे मिलता कुछ कमाने के लिए
+मैं रूह बेच देता तेरी एक झलक पाने के लिए
+
+### 6.5 Tawajjo (Shayari)
+Date: 2026-03-30
+
+तू बारिश की बूंदों का ख्याल देख रहा है,
+और तुझे बादलों से झांकता चांद देख रहा है।
+तू जो बेख़बर है ज़रीआ-ए-माश में,
+ज़रा तो तवज्जो दे मेरा हाल देख रहा है॥
+
+### 6.6 Zahan (Shayari)
+Date: 2026-03-31
+
+वो शख़्स मेरे ज़हन में क्या बैठ गया,
+जैसे दूरियों का ग़म मेरे साथ बैठ गया।
+
+फूल, ख़ुशबू, चाँद, तारे मुझे क्या ख़ुशी देंगे,
+उसने नज़र फेरी और दिल बैठ गया॥
+
+### 6.7 Koi Baat Nahi (Nazm)
+Date: 2026-04-23
+
+मैं कहता हूँ तारों से
+कोई रास्ता बता दो ना
+जवाब ये है कि
+कोई रास्ता नहीं।
+
+हवाएं तेरी खुशबू
+मुझ तक ले आती हैं
+हैरानी ये है कि
+कोई खिड़की खुली नहीं।
+
+वो सूरज मुझ पे
+धूप बरसा रहा है
+लेकिन उसका दिल पिघलाने की
+इसकी औकात नहीं।
+
+मैंने लिख दी
+हर बात तुम्हारे लिए
+तुम सुनना नहीं चाहते
+तो कोई बात नहीं।
+
+### 6.8 Zulfein (Sher)
+Date: 2026-04-19
+
+दुनिया की खूबसूरती क्या खूब लग सकती है
+मैं उसकी ज़ुल्फें संवारता हूँ और देखता हूँ।
+
+### 6.9 She is like Music (Poem)
+Date: 2024-06-03
+
+She is like music
+The music which uncertainly appear in your head
+And starts ringing
+and the vibe of the music gives you undefinite amount of pleasure
+But after so many repetations
+It starts disturbing your head
+You try to let it go
+But you are not capable of doing so,
+Still you are feeling pleasurefull and painful at the same time
+She is like that music
+I always enjoy!
+
+### 6.10 Mitti Ka Shahar (Shayari)
+Date: 2024-03-27
+
+उसे देखना जिंदगी है, और
+उससे ना मिल पाना
+जान ले रही है॥
+
+उसे देखने को मेरी आंखे यूं तरसती हैं,
+मानो चांद को देखने को
+अमावस की रात तरसती हो॥
+
+इस कदर टूट के
+उसकी याद आ रही है,
+मानो मिट्टी का शहर हो
+और बाढ़ आ रही हो॥
+
+### 6.11 Chand (Sher)
+Date: 2025-04-25
+
+हर तारे को मैंने बहुत करीब से देखा है।
+मेरे चाँद से खूबसूरत कोई नहीं॥
+
+### 6.12 Yaadon Ka Mausam (Sher)
+Date: 2025-04-27
+
+आज फिर उसकी यादों का मौसम हो रहा है,
+आज फिर उसे भूलने की कोशिश होगी॥
+
+### 6.13 Aitraz Aur Darr (Sher)
+Date: 2025-06-18
+
+मुझे उसकी ना से ऐतराज नहीं,
+मुझे उसकी हां से डर लगता है॥
+
+### 6.14 Bhid Me Nazre (Shayari)
+Date: 2025-06-18
+
+लाखों की भीड़ में
+नज़रें उन्हें ढूंढती हैं,
+आसमान में रहने वालों को
+ज़मीन पर ढूंढती हैं।
+हमें ढूंढते हुए देख
+छुप जाती हैं,
+मानो तड़पे हुए दिल को
+और तड़पाती हैं।
+
+---
+
+## 7. Thoughts & Musings
+
+- "Life is full of tragedies, the worst one is Love." — Prince Bhalse (2026-05-31)
+
+- "कुछ बेवजह सी है, ये मोहब्बत है।" — Prince Bhalse (2026-05-23)
+
+- "अगर मैं तेरा न होता, तो खुद का होता।" — Prince Bhalse (2026-05-31 )
+
+- "Keep reminding your Goals." — Prince Bhalse (2025-10-07)
+
+- "Materialistic things won't make you happy, achieving your goals will." — Prince Bhalse (2025-08-07)
+
+- "ये जो मुझसे मर रहा है, कौन है ये,.......................... ओर ये जो जी रहा है, ये कौन है ॥" — Prince Bhalse (2026-05-14)
+
+- "अगर आसान होता कागज़ पर दिल रखना कमबख्त हर आशिक शायर होता" — Prince Bhalse (2026-04-24)

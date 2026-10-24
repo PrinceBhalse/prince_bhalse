@@ -1,0 +1,40 @@
+# Prince Bhalse
+
+> Personal portfolio, digital garden, essays, fiction, poetry (Shayari, Nazm), and software architecture projects by Prince Bhalse.
+
+Prince Bhalse is a Software Architect, Writer, and Poet. This digital garden serves as a comprehensive portfolio featuring open-source software projects, full-stack architectures, philosophical essays, psychological crime fiction, Hindi and Urdu poetry, reading recommendations, and digital artwork.
+
+## Core Navigation
+
+- [Home](https://prince-bhalse.vercel.app/): Main landing page featuring bio, skills overview, highlights, and primary site navigation.
+- [Software Projects](https://prince-bhalse.vercel.app/projects): Software engineering portfolio including blockchain applications, AI analytics tools, and machine learning systems.
+- [Blog & Essays](https://prince-bhalse.vercel.app/blog): In-depth essays and articles exploring philosophy, emotional depth, university life, and mindfulness.
+- [Stories](https://prince-bhalse.vercel.app/stories): Narrative prose, psychological thrillers, and immersive dark crime stories.
+- [Shayari & Poetry](https://prince-bhalse.vercel.app/shayari): Original Hindi and Urdu poetry collection including Nazms, Ghazals, and couplets.
+- [Thoughts](https://prince-bhalse.vercel.app/thoughts): Short-form insights, stream-of-consciousness reflections, and philosophical maxims.
+- [Books](https://prince-bhalse.vercel.app/books): Author page and book catalogue, featuring novels, reading notes, and recommendations.
+- [Artwork](https://prince-bhalse.vercel.app/art-work): Visual digital art gallery and creative media showcase.
+
+## Software Projects
+
+- [Veritas](https://veritas-gamma-ebon.vercel.app/): Veritas is a decentralized, multi-signature document verification system built on the Ethereum blockchain and IPFS that establishes an immutable, zero-trust chain of custody to prevent fraud and ensure mathematical proof of document authenticity.
+- [AI Data Analysis](https://ai-data-analysis-kappa.vercel.app/): Data Analytics tool which can generate chart based summary.
+- [Movie Recommendation System](https://movierecommendationsystem-rlyq.onrender.com/): A collaborative filtering based movie recommendation system based on tmdb dataset.
+
+## Books & Novels
+
+- [The Liar's Game](https://www.amazon.in/dp/B0HNP51DGP): The room is the womb and the tomb
+
+## Blog & Articles
+
+- [Prem](https://prince-bhalse.vercel.app/blog/pyaar-aur-prem-ki-khoj): Meko pyaar kese ho sakta hai? Kashi ke kinare se lekar Premanand Ji aur Acharya Prashant ke vicharon tak, prem ki ek adhuri khoj.
+- [College Notes](https://prince-bhalse.vercel.app/blog/college-notes): College khatam, dosti aur yaadein hamesha dil me rahengi.
+- [The Art of Nothing](https://prince-bhalse.vercel.app/blog/the-art-of-nothing): Apart from the hustle of creating and planning, I believe one should also master the 'Art of Nothing'.
+
+## Fiction & Stories
+
+- [Chaar Chor](https://prince-bhalse.vercel.app/stories/band-kamre-ek-khaufnak-dastaan): Ek sunsaan ghar, chaar bekhauf chor aur ek aisi raat jiska andhera unki rooh ko hamesha ke liye nigal gaya.
+
+## Optional
+
+- [Full Content Catalog](https://prince-bhalse.vercel.app/llms-full.txt): Complete, consolidated plain-text catalog containing all articles, stories, poetry, and project details for LLMs.
