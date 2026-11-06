@@ -39,7 +39,16 @@ const NavBar = () => {
       aria-label="Main navigation"
     >
       <Link to="/" className="nav-logo" aria-label="Prince Bhalse - Home">
-        PRINCE<span style={{ color: 'var(--primary)' }}>.</span>
+        <img
+          src="/favicon.svg"
+          alt="Prince Bhalse Logo"
+          className="nav-logo-mark"
+          width="32"
+          height="32"
+        />
+        <span className="nav-logo-text">
+          PRINCE<span style={{ color: 'var(--primary)' }}>.</span>
+        </span>
       </Link>
 
       <div className="nav-right-cluster">
@@ -128,11 +137,33 @@ const NavBar = () => {
           box-shadow: 0 8px 30px var(--shadow-color, rgba(0, 0, 0, 0.3));
         }
         .nav-logo {
+          display: flex;
+          align-items: center;
+          gap: 0.65rem;
           font-size: 1.5rem;
           font-weight: 800;
           letter-spacing: -0.05em;
           text-decoration: none;
           color: var(--text);
+          transition: transform 0.2s ease;
+        }
+        .nav-logo:hover {
+          transform: translateY(-1px);
+        }
+        .nav-logo-mark {
+          width: 32px;
+          height: 32px;
+          border-radius: 8px;
+          display: block;
+          flex-shrink: 0;
+          box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+          transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .nav-logo:hover .nav-logo-mark {
+          transform: rotate(6deg) scale(1.08);
+        }
+        .nav-logo-text {
+          display: inline-block;
         }
 
         .nav-right-cluster {

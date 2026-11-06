@@ -1,18 +1,16 @@
 import React from 'react';
-import { BookOpen, ExternalLink, Sparkles, Clock, Layers, Globe, Hash, Bookmark, Feather, ShieldCheck } from 'lucide-react';
+import { BookOpen, ExternalLink, Sparkles, Clock, Layers, Globe, Hash, Bookmark, Feather } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import { usePageSEO } from '../hooks/usePageSEO';
 import booksData from '../data/books.json';
 
 const Books = () => {
   usePageSEO({
-    title: "Published Books | Prince Bhalse — The Liar's Game",
-    description: "Explore novels and published books authored by Prince Bhalse, featuring debut dark-academia psychological thriller 'The Liar's Game: The Elara Voss Investigations' on Amazon Kindle.",
-    keywords: "Prince Bhalse, The Liar's Game, Elara Voss Investigations, Prince Bhalse Books, Author, Amazon Kindle, Psychological Thriller, Dark Academia, Novelist",
-    ogImage: '/images/books/the-liars-game.png'
+    title: "Published Books & Novels | Prince Bhalse — The Last Person Who Remembers & The Liar's Game",
+    description: "Explore published books authored by Prince Bhalse, including psychological thriller 'The Last Person Who Remembers' and dark-academia mystery 'The Liar's Game' on Amazon.",
+    keywords: "Prince Bhalse, The Last Person Who Remembers, The Liar's Game, Prince Bhalse Books, Author, Amazon, Novelist, Psychological Thriller, Dark Academia, Fiction",
+    ogImage: '/images/books/the-last-person-who-remembers.jpg'
   });
-
-  const featuredBook = booksData[0];
 
   return (
     <div className="container section-padding animate-fade-in">
@@ -27,138 +25,125 @@ const Books = () => {
         </p>
       </header>
 
-      {featuredBook && (
-        <AnimatedSection>
-          <article className="glass featured-book-card" aria-label={`Featured Book: ${featuredBook.title}`}>
-            <div className="book-hero-grid">
-              {/* Cover visual & Actions */}
-              <div className="book-cover-col">
-                <div className="book-3d-wrapper">
-                  <div className="book-ambient-glow" aria-hidden="true" />
-                  <div className="book-3d-frame">
-                    <img
-                      src={featuredBook.coverImage}
-                      alt={`${featuredBook.title} by ${featuredBook.author} - Book Poster`}
-                      className="book-cover-img"
-                      loading="eager"
-                    />
-                    <div className="book-spine-shine" aria-hidden="true" />
+      {/* Book Entries List */}
+      <div className="books-list">
+        {booksData.map((book) => (
+          <AnimatedSection key={book.id}>
+            <article className="glass featured-book-card" aria-label={`Book: ${book.title}`}>
+              <div className="book-hero-grid">
+                {/* Cover visual & Actions */}
+                <div className="book-cover-col">
+                  <div className="book-3d-wrapper">
+                    <div className="book-ambient-glow" aria-hidden="true" />
+                    <div className="book-3d-frame">
+                      <img
+                        src={book.coverImage}
+                        alt={`${book.title} by ${book.author} - Book Poster`}
+                        className="book-cover-img"
+                        loading="eager"
+                      />
+                      <div className="book-spine-shine" aria-hidden="true" />
+                    </div>
+                    <div className="book-status-pill">
+                      <Sparkles size={13} />
+                      <span>{book.badge || (book.id === 1 ? 'Debut Novel' : 'Novel')}</span>
+                    </div>
                   </div>
-                  <div className="book-status-pill">
-                    <Sparkles size={13} />
-                    <span>Debut Novel</span>
+
+                  <div className="book-action-box">
+                    <a
+                      href={book.amazonUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="amazon-buy-btn"
+                      aria-label={`Buy or read ${book.title} on Amazon (opens in a new tab)`}
+                    >
+                      <span>{book.format && book.format.includes('Kindle') ? 'Read on Amazon Kindle' : 'Order on Amazon'}</span>
+                      <ExternalLink size={16} />
+                    </a>
+                    <div className="book-pricing-note">
+                      <span className="price-tag">{book.price}</span>
+                      {book.format && book.format.includes('Kindle') && (
+                        <span className="ku-badge">Kindle Unlimited</span>
+                      )}
+                    </div>
                   </div>
                 </div>
 
-                <div className="book-action-box">
-                  <a
-                    href={featuredBook.amazonUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="amazon-buy-btn"
-                    id="buy-amazon-btn"
-                    aria-label={`Buy or read ${featuredBook.title} on Amazon Kindle (opens in a new tab)`}
-                  >
-                    <span>Read on Amazon Kindle</span>
-                    <ExternalLink size={16} />
-                  </a>
-                  <div className="book-pricing-note">
-                    <span className="price-tag">{featuredBook.price}</span>
-                    <span className="ku-badge">Kindle Unlimited</span>
+                {/* Book Information & Synopsis */}
+                <div className="book-details-col">
+                  <div className="book-series-banner">
+                    <Bookmark size={14} className="series-icon" />
+                    <span>{book.series}</span>
                   </div>
-                </div>
-              </div>
 
-              {/* Book Information & Synopsis */}
-              <div className="book-details-col">
-                <div className="book-series-banner">
-                  <Bookmark size={14} className="series-icon" />
-                  <span>{featuredBook.series}</span>
-                </div>
+                  <h2 className="book-main-title">{book.title}</h2>
+                  <p className="book-author-credit">by <strong>{book.author}</strong></p>
 
-                <h2 className="book-main-title">{featuredBook.title}</h2>
-                <p className="book-author-credit">by <strong>{featuredBook.author}</strong></p>
+                  <div className="book-tagline-quote">
+                    <span className="tagline-decoration">“</span>
+                    <p>{book.tagline}</p>
+                  </div>
 
-                <div className="book-tagline-quote">
-                  <span className="tagline-decoration">“</span>
-                  <p>{featuredBook.tagline}</p>
-                </div>
+                  <div className="book-pitch-box">
+                    <p className="pitch-text">{book.pitch}</p>
+                  </div>
 
-                <div className="book-pitch-box">
-                  <p className="pitch-text">{featuredBook.pitch}</p>
-                </div>
+                  <div className="book-synopsis-section">
+                    <h3 className="section-mini-heading">Synopsis</h3>
+                    <div className="synopsis-paragraphs">
+                      {book.synopsis.map((para, i) => (
+                        <p key={i}>{para}</p>
+                      ))}
+                    </div>
+                  </div>
 
-                <div className="book-synopsis-section">
-                  <h3 className="section-mini-heading">Synopsis</h3>
-                  <div className="synopsis-paragraphs">
-                    {featuredBook.synopsis.map((para, i) => (
-                      <p key={i}>{para}</p>
+                  {/* Specifications Grid */}
+                  <div className="book-specs-grid">
+                    <div className="spec-card">
+                      <Layers size={16} className="spec-icon" />
+                      <div>
+                        <span className="spec-label">Format</span>
+                        <span className="spec-value">{book.format}</span>
+                      </div>
+                    </div>
+                    <div className="spec-card">
+                      <Clock size={16} className="spec-icon" />
+                      <div>
+                        <span className="spec-label">Length</span>
+                        <span className="spec-value">{book.pages}</span>
+                      </div>
+                    </div>
+                    <div className="spec-card">
+                      <Globe size={16} className="spec-icon" />
+                      <div>
+                        <span className="spec-label">Language</span>
+                        <span className="spec-value">{book.language}</span>
+                      </div>
+                    </div>
+                    <div className="spec-card">
+                      <Hash size={16} className="spec-icon" />
+                      <div>
+                        <span className="spec-label">{book.isbn13 ? 'ISBN-13' : 'ASIN'}</span>
+                        <span className="spec-value">{book.isbn13 || book.asin}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Genre Tags */}
+                  <div className="book-tags-row">
+                    {book.tags.map((tag, idx) => (
+                      <span key={idx} className="genre-tag">
+                        {tag}
+                      </span>
                     ))}
                   </div>
                 </div>
-
-                {/* Specifications Grid */}
-                <div className="book-specs-grid">
-                  <div className="spec-card">
-                    <Layers size={16} className="spec-icon" />
-                    <div>
-                      <span className="spec-label">Format</span>
-                      <span className="spec-value">{featuredBook.format}</span>
-                    </div>
-                  </div>
-                  <div className="spec-card">
-                    <Clock size={16} className="spec-icon" />
-                    <div>
-                      <span className="spec-label">Length</span>
-                      <span className="spec-value">{featuredBook.pages}</span>
-                    </div>
-                  </div>
-                  <div className="spec-card">
-                    <Globe size={16} className="spec-icon" />
-                    <div>
-                      <span className="spec-label">Language</span>
-                      <span className="spec-value">{featuredBook.language}</span>
-                    </div>
-                  </div>
-                  <div className="spec-card">
-                    <Hash size={16} className="spec-icon" />
-                    <div>
-                      <span className="spec-label">ASIN</span>
-                      <span className="spec-value">{featuredBook.asin}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Genre Tags */}
-                <div className="book-tags-row">
-                  {featuredBook.tags.map((tag, idx) => (
-                    <span key={idx} className="genre-tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
-            </div>
-          </article>
-        </AnimatedSection>
-      )}
-
-      {/* Coming Soon Teaser */}
-      <AnimatedSection>
-        <div className="glass series-teaser-card">
-          <div className="teaser-content">
-            <span className="teaser-badge">Forthcoming</span>
-            <h3 className="teaser-title">The Elara Voss Investigations — Book Two</h3>
-            <p className="teaser-desc">
-              The story continues. Prince Bhalse is currently penning the second installment in the Elara Voss saga, delving deeper into the century-old society and the web of secrets that refuse to stay buried.
-            </p>
-          </div>
-          <div className="teaser-aside">
-            <ShieldCheck size={28} className="teaser-icon" />
-            <span>In Development</span>
-          </div>
-        </div>
-      </AnimatedSection>
+            </article>
+          </AnimatedSection>
+        ))}
+      </div>
 
       <style>{`
         .books-header {
@@ -199,13 +184,18 @@ const Books = () => {
           line-height: 1.6;
         }
 
+        .books-list {
+          display: flex;
+          flex-direction: column;
+          gap: 3.5rem;
+        }
+
         /* Featured Book Card */
         .featured-book-card {
           padding: 3rem;
           border-radius: 2rem;
           border: 1px solid var(--border);
           box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-          margin-bottom: 3rem;
           position: relative;
           overflow: hidden;
         }
@@ -274,7 +264,7 @@ const Books = () => {
           height: auto;
           display: block;
           object-fit: cover;
-          aspect-ratio: 1 / 1.6;
+          aspect-ratio: 1 / 1.55;
         }
         .book-spine-shine {
           position: absolute;
@@ -509,61 +499,6 @@ const Books = () => {
           background: rgba(var(--primary-rgb), 0.1);
         }
 
-        /* Forthcoming Teaser Card */
-        .series-teaser-card {
-          padding: 2.25rem 2.75rem;
-          border-radius: 1.5rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 2rem;
-          border: 1px dashed rgba(var(--primary-rgb), 0.3);
-          background: rgba(var(--primary-rgb), 0.03);
-        }
-        .teaser-content {
-          max-width: 700px;
-        }
-        .teaser-badge {
-          display: inline-block;
-          font-size: 0.72rem;
-          font-weight: 700;
-          color: #a855f7;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          padding: 0.25rem 0.65rem;
-          border-radius: 0.4rem;
-          background: rgba(168, 85, 247, 0.12);
-          border: 1px solid rgba(168, 85, 247, 0.25);
-          margin-bottom: 0.65rem;
-        }
-        .teaser-title {
-          font-size: 1.4rem;
-          color: var(--text);
-          margin-bottom: 0.5rem;
-        }
-        .teaser-desc {
-          color: var(--text-muted);
-          font-size: 0.95rem;
-          line-height: 1.6;
-        }
-        .teaser-aside {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 0.5rem;
-          color: var(--primary);
-          font-size: 0.85rem;
-          font-weight: 600;
-          white-space: nowrap;
-          padding: 1rem 1.5rem;
-          border-radius: 1rem;
-          background: rgba(var(--primary-rgb), 0.08);
-          border: 1px solid rgba(var(--primary-rgb), 0.2);
-        }
-        .teaser-icon {
-          color: var(--primary);
-        }
-
         @media (max-width: 960px) {
           .book-hero-grid {
             grid-template-columns: 1fr;
@@ -581,14 +516,6 @@ const Books = () => {
           }
           .book-main-title {
             font-size: 2.25rem;
-          }
-          .series-teaser-card {
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 1.75rem;
-          }
-          .teaser-aside {
-            align-self: flex-start;
           }
         }
 

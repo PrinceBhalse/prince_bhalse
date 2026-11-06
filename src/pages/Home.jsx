@@ -93,10 +93,10 @@ const Home = () => {
       id: `book-${item.id}`,
       title: item.title,
       summary: item.pitch || item.tagline,
-      date: '2026-10-20',
+      date: item.isoDate || '2026-10-20',
       contentType: 'Book',
       link: `/books`,
-      meta: 'Debut Novel',
+      meta: item.badge || 'Novel',
       thumbnail: item.coverImage,
       designType: 'media'
     }))

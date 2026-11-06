@@ -45,7 +45,24 @@ A collaborative filtering based movie recommendation system based on tmdb datase
 
 ## 3. Books & Publications
 
-### 3.1 The Liar's Game
+### 3.1 The Last Person Who Remembers: A Novel
+Series: Standalone Novel
+Tagline: She can hear a lie in any recording. She cannot hear one in her own past.
+Format: Paperback / Novel | 438 pages
+Amazon URL: https://www.amazon.com/dp/B0HPLWRX9B
+
+Synopsis:
+Mira Sen is a forensic audio analyst. She has spent her career separating real voices from fabricated ones. Then a routine custody case brings her the voice of her dead brother.
+
+Her mother insists Mira was an only child. An authenticated hospital record says Arin Sen existed. A childhood wardmate remembers Mira as a girl who frightened other children. And a recording made before Mira ever heard of the case contains her own voice: If he comes back, don't let him tell you which one of us survived.
+
+As Mira searches for the brother she remembers, she discovers that everyone who knew her has a different account of their shared past — and that she once underwent a procedure designed to rebuild her identity.
+
+The evidence is real. The memories are sincere. The stories cannot all be true. The closer Mira comes to the truth, the less certain she becomes that the woman investigating Arin's disappearance is the same woman who lived it.
+
+Some people are forgotten. Others are remembered wrong. Mira Sen is about to learn which is worse.
+
+### 3.2 The Liar's Game
 Series: The Elara Voss Investigations — Book One
 Tagline: The room is the womb and the tomb
 Format: Kindle Edition / eBook | 544 pages

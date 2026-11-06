@@ -1,5 +1,41 @@
 [
   {
+    "id": 2,
+    "title": "The Last Person Who Remembers: A Novel",
+    "series": "Standalone Novel",
+    "tagline": "She can hear a lie in any recording. She cannot hear one in her own past.",
+    "author": "Prince Bhalse",
+    "coverImage": "/images/books/the-last-person-who-remembers.jpg",
+    "amazonUrl": "https://www.amazon.com/dp/B0HPLWRX9B",
+    "asin": "B0HPLWRX9B",
+    "isbn13": "979-8166069672",
+    "publicationDate": "October 28, 2026",
+    "isoDate": "2026-10-28",
+    "pages": "438 pages",
+    "format": "Paperback / Novel",
+    "language": "English",
+    "genre": "Psychological Thriller & Suspense",
+    "price": "Available on Amazon",
+    "status": "Available Now",
+    "badge": "New Release",
+    "synopsis": [
+      "Mira Sen is a forensic audio analyst. She has spent her career separating real voices from fabricated ones. Then a routine custody case brings her the voice of her dead brother.",
+      "Her mother insists Mira was an only child. An authenticated hospital record says Arin Sen existed. A childhood wardmate remembers Mira as a girl who frightened other children. And a recording made before Mira ever heard of the case contains her own voice: If he comes back, don't let him tell you which one of us survived.",
+      "As Mira searches for the brother she remembers, she discovers that everyone who knew her has a different account of their shared past — and that she once underwent a procedure designed to rebuild her identity.",
+      "The evidence is real. The memories are sincere. The stories cannot all be true. The closer Mira comes to the truth, the less certain she becomes that the woman investigating Arin's disappearance is the same woman who lived it.",
+      "Some people are forgotten. Others are remembered wrong. Mira Sen is about to learn which is worse."
+    ],
+    "pitch": "A gripping psychological suspense novel following a forensic audio analyst who discovers the voice of her dead brother — only to find every record and memory of her past beginning to fracture.",
+    "features": [
+      { "label": "Format", "value": "Paperback" },
+      { "label": "Length", "value": "438 Pages" },
+      { "label": "Language", "value": "English" },
+      { "label": "ISBN-13", "value": "979-8166069672" },
+      { "label": "ASIN", "value": "B0HPLWRX9B" }
+    ],
+    "tags": ["Psychological Thriller", "Mystery & Suspense", "Identity & Memory", "Crime Fiction", "Audio Forensics"]
+  },
+  {
     "id": 1,
     "title": "The Liar's Game",
     "series": "The Elara Voss Investigations — Book One",
@@ -9,12 +45,14 @@
     "amazonUrl": "https://www.amazon.in/dp/B0HNP51DGP",
     "asin": "B0HNP51DGP",
     "publicationDate": "October 20, 2026",
+    "isoDate": "2026-10-20",
     "pages": "544 pages",
     "format": "Kindle Edition / eBook",
     "language": "English",
     "genre": "Crime, Mystery & Thriller",
     "price": "₹284 (Free with Kindle Unlimited)",
     "status": "Available Now",
+    "badge": "Debut Novel",
     "synopsis": [
       "Around her, the world was on fire with a graduate's worth of goodbyes. On the banister, Mira Chen left behind everything that would have made her recognizable: her denim jacket, a black notebook, and a key she was never supposed to find. Elara Voss walked away from the party, crossed the campus lawn, and opened that key's door to find something the university had been keeping beneath its oldest library for a hundred years.",
       "A room that official blueprints say does not exist.",
