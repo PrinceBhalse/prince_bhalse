@@ -1,0 +1,530 @@
+/* ==========================================================================
+   UI THEME SYSTEM - ACCORDING TO SPECIFICATIONS
+   1. Midnight: Default theme, unchanged.
+   2. Neo-Brutalism: Bold, unconventional, bright solid colors, thick black borders,
+      sharp edges (0px radius), oversized typography, noticeable hard shadows.
+   3. Glassmorphism: Frosted glass, semi-transparent backgrounds, background blur,
+      subtle borders, soft shadows, floating layered look, clean & elegant.
+   4. Cyberpunk UI: Dystopian dark canvas, digital grids, neon electric blue, purple,
+      pink, and green, glowing borders, sharp geometric chamfers, technical data HUD.
+   5. Aurora UI: Northern Lights, smooth fluid gradients blending blue, purple, pink,
+      green, and cyan, soft blurred lighting, depth & organic transitions.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. NEO-BRUTALISM UI THEME
+   -------------------------------------------------------------------------- */
+[data-ui-theme="neo-brutalism"] {
+  --transition: all 0.12s cubic-bezier(0, 0, 0.2, 1);
+  background-color: #fffdf5 !important;
+  color: #000000 !important;
+}
+
+[data-ui-theme="neo-brutalism"] body {
+  background-color: #fffdf5 !important;
+  color: #000000 !important;
+}
+
+/* Oversized Typography & Stark Contrast */
+[data-ui-theme="neo-brutalism"] h1,
+[data-ui-theme="neo-brutalism"] h2,
+[data-ui-theme="neo-brutalism"] h3,
+[data-ui-theme="neo-brutalism"] h4,
+[data-ui-theme="neo-brutalism"] h5,
+[data-ui-theme="neo-brutalism"] h6,
+[data-ui-theme="neo-brutalism"] .hero-title,
+[data-ui-theme="neo-brutalism"] .books-title,
+[data-ui-theme="neo-brutalism"] .artwork-title,
+[data-ui-theme="neo-brutalism"] .home-garden-title,
+[data-ui-theme="neo-brutalism"] .book-main-title {
+  color: #000000 !important;
+  font-weight: 900 !important;
+  -webkit-text-fill-color: initial !important;
+  background: none !important;
+  letter-spacing: -0.03em !important;
+}
+
+[data-ui-theme="neo-brutalism"] .hero-title {
+  font-size: 3.8rem !important;
+  text-transform: uppercase !important;
+}
+
+[data-ui-theme="neo-brutalism"] .books-title,
+[data-ui-theme="neo-brutalism"] .artwork-title,
+[data-ui-theme="neo-brutalism"] .home-garden-title {
+  text-transform: uppercase !important;
+}
+
+[data-ui-theme="neo-brutalism"] p,
+[data-ui-theme="neo-brutalism"] .hero-desc,
+[data-ui-theme="neo-brutalism"] .artwork-subtitle,
+[data-ui-theme="neo-brutalism"] .books-subtitle,
+[data-ui-theme="neo-brutalism"] .home-garden-subtitle,
+[data-ui-theme="neo-brutalism"] .garden-card-summary,
+[data-ui-theme="neo-brutalism"] .synopsis-paragraphs p,
+[data-ui-theme="neo-brutalism"] .book-author-credit {
+  color: #111827 !important;
+  font-size: 1.05rem !important;
+}
+
+/* Sharp Edges (0px radius) & Noticeable Hard Shadows & 3px Black Borders */
+[data-ui-theme="neo-brutalism"] .glass,
+[data-ui-theme="neo-brutalism"] .hero-card,
+[data-ui-theme="neo-brutalism"] .featured-book-card,
+[data-ui-theme="neo-brutalism"] .garden-card,
+[data-ui-theme="neo-brutalism"] .art-card,
+[data-ui-theme="neo-brutalism"] .project-card,
+[data-ui-theme="neo-brutalism"] .blog-card,
+[data-ui-theme="neo-brutalism"] .story-card,
+[data-ui-theme="neo-brutalism"] .thought-card,
+[data-ui-theme="neo-brutalism"] .shayari-card,
+[data-ui-theme="neo-brutalism"] .theme-panel,
+[data-ui-theme="neo-brutalism"] .nav-container,
+[data-ui-theme="neo-brutalism"] .spec-card,
+[data-ui-theme="neo-brutalism"] .book-pitch-box {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 3px solid #000000 !important;
+  border-radius: 0px !important;
+  box-shadow: 7px 7px 0px #000000 !important;
+}
+
+/* Sharp Tactile Neo-Brutalist Buttons */
+[data-ui-theme="neo-brutalism"] .hero-btn,
+[data-ui-theme="neo-brutalism"] .amazon-buy-btn,
+[data-ui-theme="neo-brutalism"] .project-link,
+[data-ui-theme="neo-brutalism"] .filter-btn.active,
+[data-ui-theme="neo-brutalism"] .theme-fab,
+[data-ui-theme="neo-brutalism"] .copy-btn {
+  background: #ffe600 !important;
+  color: #000000 !important;
+  border: 3px solid #000000 !important;
+  border-radius: 0px !important;
+  box-shadow: 5px 5px 0px #000000 !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease !important;
+}
+
+[data-ui-theme="neo-brutalism"] .hero-btn:hover,
+[data-ui-theme="neo-brutalism"] .amazon-buy-btn:hover,
+[data-ui-theme="neo-brutalism"] .project-link:hover,
+[data-ui-theme="neo-brutalism"] .nav-theme-btn:hover,
+[data-ui-theme="neo-brutalism"] .copy-btn:hover {
+  transform: translate(3px, 3px) !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+  filter: none !important;
+}
+
+[data-ui-theme="neo-brutalism"] .filter-btn {
+  background: #ffffff !important;
+  border: 2.5px solid #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+}
+
+/* Bright Solid Color Badges & Tags */
+[data-ui-theme="neo-brutalism"] .books-badge,
+[data-ui-theme="neo-brutalism"] .garden-card-category,
+[data-ui-theme="neo-brutalism"] .art-category-pill,
+[data-ui-theme="neo-brutalism"] .genre-tag,
+[data-ui-theme="neo-brutalism"] .book-status-pill,
+[data-ui-theme="neo-brutalism"] .ku-badge,
+[data-ui-theme="neo-brutalism"] .project-badge {
+  border: 2px solid #000000 !important;
+  border-radius: 0px !important;
+  background: #ffe600 !important;
+  color: #000000 !important;
+  box-shadow: 3px 3px 0px #000000 !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* Alternating Playful Solid Color Accents */
+[data-ui-theme="neo-brutalism"] .genre-tag:nth-child(2n) {
+  background: #ff6b8b !important;
+  color: #000000 !important;
+}
+[data-ui-theme="neo-brutalism"] .genre-tag:nth-child(3n) {
+  background: #00e5ff !important;
+  color: #000000 !important;
+}
+[data-ui-theme="neo-brutalism"] .genre-tag:nth-child(4n) {
+  background: #a3e635 !important;
+  color: #000000 !important;
+}
+
+/* Navbar in Neo-Brutalism */
+[data-ui-theme="neo-brutalism"] .nav-container {
+  background: #ffffff !important;
+  border: 3px solid #000000 !important;
+  box-shadow: 5px 5px 0px #000000 !important;
+  border-radius: 0px !important;
+}
+
+[data-ui-theme="neo-brutalism"] .nav-logo {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+[data-ui-theme="neo-brutalism"] .nav-link {
+  color: #000000 !important;
+  font-weight: 800 !important;
+  border-radius: 0px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+[data-ui-theme="neo-brutalism"] .nav-link:hover {
+  background: #fff8d6 !important;
+}
+
+[data-ui-theme="neo-brutalism"] .nav-link-active {
+  background: #ffe600 !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+[data-ui-theme="neo-brutalism"] .nav-theme-btn {
+  background: #ffe600 !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 3px 3px 0px #000000 !important;
+  border-radius: 0px !important;
+  font-weight: 800 !important;
+}
+
+[data-ui-theme="neo-brutalism"] .book-pitch-box,
+[data-ui-theme="neo-brutalism"] .book-tagline-quote {
+  background: #fff8d6 !important;
+  border: 3px solid #000000 !important;
+  border-left: 6px solid #000000 !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+}
+
+[data-ui-theme="neo-brutalism"] .hero-img-wrapper {
+  border-radius: 0px !important;
+  border: 4px solid #000000 !important;
+  box-shadow: 9px 9px 0px #000000 !important;
+}
+
+[data-ui-theme="neo-brutalism"] .hero-blur,
+[data-ui-theme="neo-brutalism"] .book-ambient-glow {
+  display: none !important;
+}
+
+[data-ui-theme="neo-brutalism"] .footer-section {
+  border-top: 3px solid #000000 !important;
+  background: #f4f0e6 !important;
+  color: #000000 !important;
+}
+
+[data-ui-theme="neo-brutalism"] .footer-copyright,
+[data-ui-theme="neo-brutalism"] .social-icon {
+  color: #000000 !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   2. GLASSMORPHISM UI THEME (FROSTED GLASS SURFACES, FLOATING LAYERS)
+   -------------------------------------------------------------------------- */
+[data-ui-theme="glassmorphism"] {
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(217, 70, 239, 0.4) 0%, transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(56, 189, 248, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 50% 75%, rgba(139, 92, 246, 0.45) 0%, transparent 55%),
+    radial-gradient(circle at 80% 85%, rgba(244, 63, 94, 0.35) 0%, transparent 45%),
+    #0a0a23 !important;
+  background-attachment: fixed !important;
+  color: #ffffff !important;
+}
+
+[data-ui-theme="glassmorphism"] body {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+/* Semi-Transparent Backgrounds with Deep Blur & Soft Shadows */
+[data-ui-theme="glassmorphism"] .glass,
+[data-ui-theme="glassmorphism"] .hero-card,
+[data-ui-theme="glassmorphism"] .featured-book-card,
+[data-ui-theme="glassmorphism"] .garden-card,
+[data-ui-theme="glassmorphism"] .art-card,
+[data-ui-theme="glassmorphism"] .project-card,
+[data-ui-theme="glassmorphism"] .blog-card,
+[data-ui-theme="glassmorphism"] .story-card,
+[data-ui-theme="glassmorphism"] .thought-card,
+[data-ui-theme="glassmorphism"] .shayari-card,
+[data-ui-theme="glassmorphism"] .theme-panel,
+[data-ui-theme="glassmorphism"] .nav-container {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%) !important;
+  backdrop-filter: blur(28px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.55) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.35) !important;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), 0 20px 50px rgba(0, 0, 0, 0.4) !important;
+  border-radius: 1.75rem !important;
+}
+
+/* Floating Glass Buttons */
+[data-ui-theme="glassmorphism"] .hero-btn,
+[data-ui-theme="glassmorphism"] .amazon-buy-btn,
+[data-ui-theme="glassmorphism"] .project-link,
+[data-ui-theme="glassmorphism"] .theme-fab,
+[data-ui-theme="glassmorphism"] .filter-btn.active {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.08) 100%) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.7) !important;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 15px 35px rgba(56, 189, 248, 0.35) !important;
+  border-radius: 9999px !important;
+  color: #ffffff !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease !important;
+}
+
+[data-ui-theme="glassmorphism"] .hero-btn:hover,
+[data-ui-theme="glassmorphism"] .amazon-buy-btn:hover,
+[data-ui-theme="glassmorphism"] .project-link:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.15) 100%) !important;
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.85), 0 20px 45px rgba(56, 189, 248, 0.55) !important;
+  transform: translateY(-2px) !important;
+}
+
+[data-ui-theme="glassmorphism"] .filter-btn {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 9999px !important;
+  color: #ffffff !important;
+}
+
+[data-ui-theme="glassmorphism"] .hero-img-wrapper {
+  border-radius: 50% !important;
+  border: 2px solid rgba(255, 255, 255, 0.45) !important;
+  box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.2), 0 25px 60px rgba(56, 189, 248, 0.4) !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   3. CYBERPUNK UI THEME (DYSTOPIAN SCI-FI, DIGITAL GRID, NEON BLUE/PINK/GREEN)
+   -------------------------------------------------------------------------- */
+[data-ui-theme="cyberpunk"] {
+  background-color: #06060c !important;
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.08) 1px, transparent 1px) !important;
+  background-size: 32px 32px !important;
+  color: #fefefe !important;
+}
+
+[data-ui-theme="cyberpunk"] body {
+  background: transparent !important;
+  color: #fefefe !important;
+}
+
+/* Sharp Geometric Chamfers & Glowing Neon Borders */
+[data-ui-theme="cyberpunk"] .glass,
+[data-ui-theme="cyberpunk"] .hero-card,
+[data-ui-theme="cyberpunk"] .featured-book-card,
+[data-ui-theme="cyberpunk"] .garden-card,
+[data-ui-theme="cyberpunk"] .art-card,
+[data-ui-theme="cyberpunk"] .project-card,
+[data-ui-theme="cyberpunk"] .blog-card,
+[data-ui-theme="cyberpunk"] .story-card,
+[data-ui-theme="cyberpunk"] .thought-card,
+[data-ui-theme="cyberpunk"] .shayari-card,
+[data-ui-theme="cyberpunk"] .theme-panel,
+[data-ui-theme="cyberpunk"] .nav-container {
+  background: rgba(12, 13, 24, 0.95) !important;
+  backdrop-filter: none !important;
+  border: 1.5px solid #00f0ff !important;
+  border-radius: 2px !important;
+  box-shadow: 0 0 22px rgba(0, 240, 255, 0.35), inset 0 0 25px rgba(0, 240, 255, 0.06) !important;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+}
+
+[data-ui-theme="cyberpunk"] .hero-title,
+[data-ui-theme="cyberpunk"] .books-title,
+[data-ui-theme="cyberpunk"] .artwork-title,
+[data-ui-theme="cyberpunk"] .home-garden-title {
+  color: #ffffff !important;
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.8), 0 0 30px rgba(168, 85, 247, 0.5) !important;
+}
+
+/* Neon Yellow, Cyan & Pink Sci-Fi Buttons */
+[data-ui-theme="cyberpunk"] .hero-btn,
+[data-ui-theme="cyberpunk"] .amazon-buy-btn,
+[data-ui-theme="cyberpunk"] .project-link,
+[data-ui-theme="cyberpunk"] .filter-btn.active,
+[data-ui-theme="cyberpunk"] .theme-fab {
+  background: #fcee0a !important;
+  color: #000000 !important;
+  font-weight: 900 !important;
+  border: none !important;
+  border-radius: 0px !important;
+  clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%) !important;
+  box-shadow: 0 0 20px rgba(252, 238, 10, 0.7) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-ui-theme="cyberpunk"] .hero-btn:hover,
+[data-ui-theme="cyberpunk"] .amazon-buy-btn:hover,
+[data-ui-theme="cyberpunk"] .project-link:hover {
+  background: #00f0ff !important;
+  color: #000000 !important;
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.95), 0 0 45px rgba(255, 0, 85, 0.6) !important;
+}
+
+[data-ui-theme="cyberpunk"] .filter-btn {
+  border: 1px solid rgba(0, 240, 255, 0.5) !important;
+  background: rgba(0, 240, 255, 0.08) !important;
+  color: #00f0ff !important;
+  border-radius: 2px !important;
+  font-family: monospace, sans-serif !important;
+}
+
+/* Technical Data Display Badges (Neon Green, Pink & Cyan) */
+[data-ui-theme="cyberpunk"] .books-badge,
+[data-ui-theme="cyberpunk"] .garden-card-category,
+[data-ui-theme="cyberpunk"] .art-category-pill,
+[data-ui-theme="cyberpunk"] .genre-tag,
+[data-ui-theme="cyberpunk"] .spec-card,
+[data-ui-theme="cyberpunk"] .book-status-pill {
+  border: 1px solid #00f0ff !important;
+  background: rgba(0, 240, 255, 0.12) !important;
+  color: #00f0ff !important;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.4) !important;
+  border-radius: 2px !important;
+  font-family: monospace, sans-serif !important;
+  letter-spacing: 0.06em !important;
+}
+
+[data-ui-theme="cyberpunk"] .genre-tag:nth-child(2n) {
+  border-color: #ff0055 !important;
+  color: #ff0055 !important;
+  background: rgba(255, 0, 85, 0.12) !important;
+  box-shadow: 0 0 12px rgba(255, 0, 85, 0.4) !important;
+}
+
+[data-ui-theme="cyberpunk"] .genre-tag:nth-child(3n) {
+  border-color: #00ff66 !important;
+  color: #00ff66 !important;
+  background: rgba(0, 255, 102, 0.12) !important;
+  box-shadow: 0 0 12px rgba(0, 255, 102, 0.4) !important;
+}
+
+[data-ui-theme="cyberpunk"] .hero-img-wrapper {
+  border-radius: 4px !important;
+  border: 2px solid #00f0ff !important;
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.6), 0 0 50px rgba(255, 0, 85, 0.3) !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   4. AURORA UI THEME (NORTHERN LIGHTS - FLUID BLUE, PURPLE, PINK, GREEN & CYAN)
+   -------------------------------------------------------------------------- */
+[data-ui-theme="aurora"] {
+  background: 
+    radial-gradient(ellipse at 15% 15%, rgba(16, 185, 129, 0.32) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 20%, rgba(139, 92, 246, 0.35) 0%, transparent 50%),
+    radial-gradient(ellipse at 45% 65%, rgba(236, 72, 153, 0.24) 0%, transparent 45%),
+    radial-gradient(ellipse at 75% 85%, rgba(6, 182, 212, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 25% 90%, rgba(59, 130, 246, 0.25) 0%, transparent 45%),
+    #020b14 !important;
+  background-attachment: fixed !important;
+  color: #f0fdf4 !important;
+}
+
+[data-ui-theme="aurora"] body {
+  background: transparent !important;
+  color: #f0fdf4 !important;
+}
+
+/* Fluid Organic Transitions & Soft Multi-Color Aurora Glows */
+[data-ui-theme="aurora"] .glass,
+[data-ui-theme="aurora"] .hero-card,
+[data-ui-theme="aurora"] .featured-book-card,
+[data-ui-theme="aurora"] .garden-card,
+[data-ui-theme="aurora"] .art-card,
+[data-ui-theme="aurora"] .project-card,
+[data-ui-theme="aurora"] .blog-card,
+[data-ui-theme="aurora"] .story-card,
+[data-ui-theme="aurora"] .thought-card,
+[data-ui-theme="aurora"] .shayari-card,
+[data-ui-theme="aurora"] .theme-panel,
+[data-ui-theme="aurora"] .nav-container {
+  background: rgba(4, 28, 38, 0.75) !important;
+  backdrop-filter: blur(22px) !important;
+  -webkit-backdrop-filter: blur(22px) !important;
+  border: 1px solid rgba(16, 185, 129, 0.4) !important;
+  border-radius: 2rem !important;
+  box-shadow: 0 25px 60px rgba(2, 11, 20, 0.7), 0 0 35px rgba(16, 185, 129, 0.18), 0 0 50px rgba(139, 92, 246, 0.16) !important;
+}
+
+/* Fluid Aurora Gradient Buttons (Green, Cyan, Purple, Pink) */
+[data-ui-theme="aurora"] .hero-btn,
+[data-ui-theme="aurora"] .amazon-buy-btn,
+[data-ui-theme="aurora"] .project-link,
+[data-ui-theme="aurora"] .filter-btn.active,
+[data-ui-theme="aurora"] .theme-fab {
+  background: linear-gradient(135deg, #10b981 0%, #06b6d4 30%, #8b5cf6 65%, #ec4899 100%) !important;
+  border-radius: 9999px !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  box-shadow: 0 12px 35px rgba(16, 185, 129, 0.45), 0 0 25px rgba(139, 92, 246, 0.35) !important;
+  border: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+[data-ui-theme="aurora"] .hero-btn:hover,
+[data-ui-theme="aurora"] .amazon-buy-btn:hover,
+[data-ui-theme="aurora"] .project-link:hover {
+  box-shadow: 0 18px 45px rgba(16, 185, 129, 0.7), 0 0 45px rgba(139, 92, 246, 0.6) !important;
+  transform: translateY(-2px) !important;
+}
+
+[data-ui-theme="aurora"] .filter-btn {
+  background: rgba(16, 185, 129, 0.12) !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+  border-radius: 9999px !important;
+  color: #6ee7b7 !important;
+}
+
+[data-ui-theme="aurora"] .books-badge,
+[data-ui-theme="aurora"] .garden-card-category,
+[data-ui-theme="aurora"] .art-category-pill,
+[data-ui-theme="aurora"] .genre-tag,
+[data-ui-theme="aurora"] .spec-card,
+[data-ui-theme="aurora"] .book-status-pill {
+  border: 1px solid rgba(16, 185, 129, 0.45) !important;
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: #6ee7b7 !important;
+  border-radius: 9999px !important;
+}
+
+[data-ui-theme="aurora"] .hero-img-wrapper {
+  border-radius: 50% !important;
+  border: 3px solid rgba(16, 185, 129, 0.6) !important;
+  box-shadow: 0 0 45px rgba(16, 185, 129, 0.5), 0 0 70px rgba(139, 92, 246, 0.4) !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   5. MIDNIGHT (DEFAULT THEME - KEPT EXACTLY SAME)
+   -------------------------------------------------------------------------- */
+[data-ui-theme="midnight"] {
+  /* Default space-dark palette and glass variables continue seamlessly */
+}

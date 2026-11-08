@@ -68,15 +68,18 @@ const ThemeSwitcher = () => {
                     }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    aria-label={`Switch to ${t.name} theme`}
-                    title={t.name}
+                    aria-label={`Switch to ${t.name} theme: ${t.subtitle}`}
+                    title={t.description || t.name}
                   >
                     <span
                       className="theme-swatch"
                       style={{ background: t.colors['--primary'] }}
                     />
                     <span className="theme-emoji">{t.emoji}</span>
-                    <span className="theme-name">{t.name}</span>
+                    <div className="theme-name-group">
+                      <span className="theme-name">{t.name}</span>
+                      {t.subtitle && <span className="theme-subtitle">{t.subtitle}</span>}
+                    </div>
                     {isActive && (
                       <motion.span
                         className="theme-check"
@@ -123,7 +126,7 @@ const ThemeSwitcher = () => {
           position: absolute;
           bottom: calc(100% + 1rem);
           right: 0;
-          min-width: 220px;
+          min-width: 250px;
           padding: 1.25rem;
           border-radius: 1.25rem;
           box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
@@ -175,9 +178,20 @@ const ThemeSwitcher = () => {
           font-size: 1rem;
           line-height: 1;
         }
-        .theme-name {
+        .theme-name-group {
           flex: 1;
+          display: flex;
+          flex-direction: column;
           text-align: left;
+        }
+        .theme-name {
+          font-weight: 600;
+          line-height: 1.2;
+        }
+        .theme-subtitle {
+          font-size: 0.72rem;
+          color: var(--text-muted);
+          opacity: 0.8;
         }
         .theme-check {
           font-size: 0.85rem;

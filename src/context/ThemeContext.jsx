@@ -5,6 +5,8 @@ const THEMES = {
     id: 'midnight',
     name: 'Midnight',
     emoji: '🌙',
+    subtitle: 'Classic Dark & Glass',
+    description: 'Default dark space theme with royal indigo accents, smooth glass cards, and soft ambient glows.',
     colors: {
       '--primary': '#6366f1',
       '--primary-hover': '#4f46e5',
@@ -23,97 +25,105 @@ const THEMES = {
       '--glow-color': 'rgba(99, 102, 241, 0.15)',
     }
   },
-  sakura: {
-    id: 'sakura',
-    name: 'Sakura',
-    emoji: '🌸',
+  'neo-brutalism': {
+    id: 'neo-brutalism',
+    name: 'Neo-Brutalism',
+    emoji: '⚡',
+    subtitle: 'Bold, Sharp & High-Contrast',
+    description: 'Bright solid colors, thick 3px black borders, sharp edges, oversized typography, and noticeable solid shadows.',
     colors: {
-      '--primary': '#ec4899',
-      '--primary-hover': '#db2777',
-      '--primary-rgb': '236, 72, 153',
-      '--bg': '#1a0a14',
-      '--bg-secondary': '#2d1224',
-      '--text': '#fdf2f8',
-      '--text-muted': '#d4a0bf',
-      '--card-bg': 'rgba(45, 18, 36, 0.7)',
-      '--border': 'rgba(236, 72, 153, 0.15)',
-      '--nav-bg': 'rgba(26, 10, 20, 0.85)',
-      '--scrollbar-track': '#1a0a14',
-      '--scrollbar-thumb': '#ec4899',
-      '--scrollbar-thumb-hover': '#db2777',
-      '--shadow-color': 'rgba(0, 0, 0, 0.4)',
-      '--glow-color': 'rgba(236, 72, 153, 0.15)',
+      '--primary': '#ffe600',
+      '--primary-hover': '#ffd600',
+      '--primary-rgb': '255, 230, 0',
+      '--bg': '#fffdf5',
+      '--bg-secondary': '#f4f0e6',
+      '--text': '#000000',
+      '--text-muted': '#2d3748',
+      '--card-bg': '#ffffff',
+      '--border': '#000000',
+      '--nav-bg': '#ffffff',
+      '--scrollbar-track': '#fffdf5',
+      '--scrollbar-thumb': '#000000',
+      '--scrollbar-thumb-hover': '#ffe600',
+      '--shadow-color': '#000000',
+      '--glow-color': 'rgba(255, 230, 0, 0.5)',
     }
   },
-  ocean: {
-    id: 'ocean',
-    name: 'Ocean',
-    emoji: '🌊',
+  glassmorphism: {
+    id: 'glassmorphism',
+    name: 'Glassmorphism',
+    emoji: '💎',
+    subtitle: 'Frosted Glass & Layered Depth',
+    description: 'Semi-transparent frosted glass surfaces, deep background blur, subtle specular borders, and soft floating shadows.',
     colors: {
-      '--primary': '#06b6d4',
-      '--primary-hover': '#0891b2',
-      '--primary-rgb': '6, 182, 212',
-      '--bg': '#031b24',
-      '--bg-secondary': '#0a2d3d',
-      '--text': '#ecfeff',
-      '--text-muted': '#7dd3e8',
-      '--card-bg': 'rgba(10, 45, 61, 0.7)',
-      '--border': 'rgba(6, 182, 212, 0.15)',
-      '--nav-bg': 'rgba(3, 27, 36, 0.85)',
-      '--scrollbar-track': '#031b24',
-      '--scrollbar-thumb': '#06b6d4',
-      '--scrollbar-thumb-hover': '#0891b2',
-      '--shadow-color': 'rgba(0, 0, 0, 0.4)',
-      '--glow-color': 'rgba(6, 182, 212, 0.15)',
+      '--primary': '#38bdf8',
+      '--primary-hover': '#0ea5e9',
+      '--primary-rgb': '56, 189, 248',
+      '--bg': '#0a0a23',
+      '--bg-secondary': '#131338',
+      '--text': '#ffffff',
+      '--text-muted': '#cbd5e1',
+      '--card-bg': 'rgba(255, 255, 255, 0.12)',
+      '--border': 'rgba(255, 255, 255, 0.28)',
+      '--nav-bg': 'rgba(10, 10, 35, 0.72)',
+      '--scrollbar-track': '#0a0a23',
+      '--scrollbar-thumb': '#8b5cf6',
+      '--scrollbar-thumb-hover': '#38bdf8',
+      '--shadow-color': 'rgba(0, 0, 0, 0.45)',
+      '--glow-color': 'rgba(56, 189, 248, 0.35)',
     }
   },
-  forest: {
-    id: 'forest',
-    name: 'Forest',
-    emoji: '🌿',
+  cyberpunk: {
+    id: 'cyberpunk',
+    name: 'Cyberpunk UI',
+    emoji: '🤖',
+    subtitle: 'Futuristic Neon & HUD Grid',
+    description: 'Dystopian dark canvas, digital grid, neon electric blue, purple, pink, and green, glowing borders, and angled shapes.',
     colors: {
-      '--primary': '#22c55e',
-      '--primary-hover': '#16a34a',
-      '--primary-rgb': '34, 197, 94',
-      '--bg': '#071209',
-      '--bg-secondary': '#122318',
+      '--primary': '#fcee0a',
+      '--primary-hover': '#e6d700',
+      '--primary-rgb': '252, 238, 10',
+      '--bg': '#06060c',
+      '--bg-secondary': '#0e0f1e',
+      '--text': '#fefefe',
+      '--text-muted': '#00f0ff',
+      '--card-bg': 'rgba(12, 13, 24, 0.95)',
+      '--border': '#00f0ff',
+      '--nav-bg': 'rgba(6, 6, 12, 0.96)',
+      '--scrollbar-track': '#06060c',
+      '--scrollbar-thumb': '#ff0055',
+      '--scrollbar-thumb-hover': '#00f0ff',
+      '--shadow-color': 'rgba(0, 240, 255, 0.4)',
+      '--glow-color': 'rgba(252, 238, 10, 0.5)',
+    }
+  },
+  aurora: {
+    id: 'aurora',
+    name: 'Aurora UI',
+    emoji: '🌌',
+    subtitle: 'Northern Lights & Fluid Glow',
+    description: 'Northern Lights aesthetic with smooth flowing gradients blending blue, purple, pink, green, and cyan with soft lighting.',
+    colors: {
+      '--primary': '#10b981',
+      '--primary-hover': '#059669',
+      '--primary-rgb': '16, 185, 129',
+      '--bg': '#020b14',
+      '--bg-secondary': '#051824',
       '--text': '#f0fdf4',
-      '--text-muted': '#86d99f',
-      '--card-bg': 'rgba(18, 35, 24, 0.7)',
-      '--border': 'rgba(34, 197, 94, 0.15)',
-      '--nav-bg': 'rgba(7, 18, 9, 0.85)',
-      '--scrollbar-track': '#071209',
-      '--scrollbar-thumb': '#22c55e',
-      '--scrollbar-thumb-hover': '#16a34a',
-      '--shadow-color': 'rgba(0, 0, 0, 0.4)',
-      '--glow-color': 'rgba(34, 197, 94, 0.15)',
+      '--text-muted': '#6ee7b7',
+      '--card-bg': 'rgba(4, 28, 38, 0.75)',
+      '--border': 'rgba(16, 185, 129, 0.4)',
+      '--nav-bg': 'rgba(2, 11, 20, 0.88)',
+      '--scrollbar-track': '#020b14',
+      '--scrollbar-thumb': '#10b981',
+      '--scrollbar-thumb-hover': '#8b5cf6',
+      '--shadow-color': 'rgba(0, 0, 0, 0.5)',
+      '--glow-color': 'rgba(16, 185, 129, 0.35)',
     }
-  },
-  sunset: {
-    id: 'sunset',
-    name: 'Sunset',
-    emoji: '🌅',
-    colors: {
-      '--primary': '#f59e0b',
-      '--primary-hover': '#d97706',
-      '--primary-rgb': '245, 158, 11',
-      '--bg': '#1a0f03',
-      '--bg-secondary': '#2d1c0a',
-      '--text': '#fffbeb',
-      '--text-muted': '#d4a85c',
-      '--card-bg': 'rgba(45, 28, 10, 0.7)',
-      '--border': 'rgba(245, 158, 11, 0.15)',
-      '--nav-bg': 'rgba(26, 15, 3, 0.85)',
-      '--scrollbar-track': '#1a0f03',
-      '--scrollbar-thumb': '#f59e0b',
-      '--scrollbar-thumb-hover': '#d97706',
-      '--shadow-color': 'rgba(0, 0, 0, 0.4)',
-      '--glow-color': 'rgba(245, 158, 11, 0.15)',
-    }
-  },
+  }
 };
 
-const THEME_ORDER = ['midnight', 'sakura', 'ocean', 'forest', 'sunset'];
+const THEME_ORDER = ['midnight', 'neo-brutalism', 'glassmorphism', 'cyberpunk', 'aurora'];
 
 const ThemeContext = createContext();
 
@@ -126,7 +136,9 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }) => {
   const [themeId, setThemeId] = useState(() => {
     try {
-      return localStorage.getItem('prince-theme') || 'midnight';
+      const saved = localStorage.getItem('prince-theme');
+      if (saved && THEMES[saved]) return saved;
+      return 'midnight';
     } catch {
       return 'midnight';
     }
@@ -139,6 +151,7 @@ export const ThemeProvider = ({ children }) => {
     Object.entries(t.colors).forEach(([prop, value]) => {
       root.style.setProperty(prop, value);
     });
+    root.setAttribute('data-ui-theme', t.id);
   }, []);
 
   useEffect(() => {
