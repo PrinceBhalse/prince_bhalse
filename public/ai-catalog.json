@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ards-project/ard-spec/main/spec/schemas/ai-catalog.schema.json",
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Prince Bhalse",
+    "documentationUrl": "https://prince-bhalse.vercel.app/llms.txt",
+    "logoUrl": "https://prince-bhalse.vercel.app/icon-512.png"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:prince-bhalse:llms:summary",
+      "displayName": "Prince Bhalse - LLMs Text Manifest",
+      "type": "text/markdown",
+      "url": "https://prince-bhalse.vercel.app/llms.txt",
+      "description": "LLM discovery summary and navigation index for Prince Bhalse portfolio and digital garden.",
+      "tags": ["portfolio", "llms", "ai-discovery"]
+    },
+    {
+      "identifier": "urn:air:prince-bhalse:llms:full",
+      "displayName": "Prince Bhalse - LLMs Full Content",
+      "type": "text/markdown",
+      "url": "https://prince-bhalse.vercel.app/llms-full.txt",
+      "description": "Full LLM-readable content archive including essays, stories, poems, and book details.",
+      "tags": ["content", "llms-full", "archive"]
+    }
+  ]
+}
+
