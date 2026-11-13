@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
 import { usePageSEO } from '../hooks/usePageSEO';
 import blogsData from '../data/blogs.json';
+import { getOriginMeta } from '../utils/blogOrigin';
 
 const Blog = () => {
   usePageSEO({
@@ -31,14 +32,29 @@ const Blog = () => {
       <header className="blog-header">
         <h1 className="blog-title">Writings & Insights</h1>
         <p className="blog-subtitle">Essays on technology, architecture, creative philosophy, and life.</p>
+        <div className="blog-legend" aria-label="How these writings are made">
+          <span className="origin-badge origin-own">
+            <span aria-hidden="true">✍</span> Own Thoughts
+          </span>
+          <span className="origin-badge origin-ai">
+            <span aria-hidden="true">✦</span> AI-Researched
+          </span>
+        </div>
       </header>
 
       <AnimatedSection>
         <div className="blog-list">
-          {currentPosts.map((blog) => (
+          {currentPosts.map((blog) => {
+            const origin = getOriginMeta(blog.origin);
+            return (
             <article key={blog.id} className="glass blog-card">
               <div className="blog-post-meta">
                 <span className="blog-post-category">{blog.category}</span>
+                {origin && (
+                  <span className={`origin-badge ${origin.className}`} title={origin.description}>
+                    <span aria-hidden="true">{origin.glyph}</span> {origin.label}
+                  </span>
+                )}
                 <span className="meta-divider" aria-hidden="true">•</span>
                 <time className="blog-post-date" dateTime={blog.date}>
                   {new Date(blog.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -56,7 +72,8 @@ const Blog = () => {
                 Read More <span className="arrow" aria-hidden="true">→</span>
               </Link>
             </article>
-          ))}
+            );
+          })}
         </div>
       </AnimatedSection>
 
@@ -102,6 +119,14 @@ const Blog = () => {
           font-size: 1.2rem;
           color: var(--text-muted);
         }
+        .blog-legend {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 0.6rem;
+          margin-top: 1.1rem;
+        }
         .blog-list {
           display: flex;
           flex-direction: column;
@@ -120,6 +145,7 @@ const Blog = () => {
         .blog-post-meta {
           display: flex;
           align-items: center;
+          flex-wrap: wrap;
           gap: 0.75rem;
           margin-bottom: 1rem;
           font-size: 0.9rem;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock, Tag, Share2, Check } from 'lucide-react';
 import blogsData from '../data/blogs.json';
+import { getOriginMeta } from '../utils/blogOrigin';
 import LazyImage from '../components/LazyImage';
 import { usePageSEO } from '../hooks/usePageSEO';
 
@@ -108,6 +109,8 @@ const BlogPostDetail = () => {
     );
   }
 
+  const postOrigin = getOriginMeta(post.origin);
+
   return (
     <div className="container section-padding animate-fade-in">
       {/* Reading Progress Bar */}
@@ -136,7 +139,16 @@ const BlogPostDetail = () => {
       <article className="blog-post-detail">
         {/* Post Metadata Header */}
         <header className="post-header">
-          <div className="post-category-badge">{post.category}</div>
+          <div className="post-badges">
+            {post.category && (
+              <div className="post-category-badge">{post.category}</div>
+            )}
+            {postOrigin && (
+              <span className={`origin-badge ${postOrigin.className}`} title={postOrigin.description}>
+                <span aria-hidden="true">{postOrigin.glyph}</span> {postOrigin.label}
+              </span>
+            )}
+          </div>
           <h1 className="post-title">{post.title}</h1>
           
           <div className="post-meta-container">
@@ -164,6 +176,18 @@ const BlogPostDetail = () => {
               className="hero-img" 
             />
           </div>
+        )}
+
+        {/* Content Provenance Disclosure */}
+        {post.origin === 'ai-researched' && (
+          <aside className="ai-disclosure" aria-label="Content disclosure">
+            <span className="ai-disclosure-label">
+              {postOrigin?.glyph} {postOrigin?.label || 'AI-Researched'} Essay
+            </span>
+            <p>
+              {post.originNote || 'This essay was researched and drafted with AI assistance, then reviewed and curated by Prince Bhalse. Sources are listed at the end.'}
+            </p>
+          </aside>
         )}
 
         {/* Main Content */}
@@ -293,6 +317,39 @@ const BlogPostDetail = () => {
           border-radius: 1rem;
           background: rgba(var(--primary-rgb), 0.12);
           border: 1px solid rgba(var(--primary-rgb), 0.25);
+        }
+        .post-badges {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 0.6rem;
+          margin-bottom: 1.25rem;
+        }
+        .post-badges .post-category-badge {
+          margin-bottom: 0;
+        }
+        .ai-disclosure {
+          border: 1px solid rgba(var(--primary-rgb), 0.28);
+          background: rgba(var(--primary-rgb), 0.07);
+          border-radius: 1rem;
+          padding: 1.15rem 1.4rem;
+          margin: 0 0 3rem;
+        }
+        .ai-disclosure-label {
+          display: inline-block;
+          font-size: 0.72rem;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: var(--primary);
+          margin-bottom: 0.5rem;
+        }
+        .ai-disclosure p {
+          margin: 0;
+          font-size: 0.92rem;
+          line-height: 1.7;
+          color: var(--text-muted);
         }
         .post-title {
           font-size: 3.25rem;

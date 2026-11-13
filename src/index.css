@@ -181,6 +181,33 @@ button {
   }
 }
 
+/* ===== Blog Provenance Badges (Own Thoughts / AI-Researched) ===== */
+.origin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.origin-own {
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.origin-ai {
+  color: var(--primary);
+  border-color: rgba(var(--primary-rgb), 0.35);
+  background: rgba(var(--primary-rgb), 0.1);
+}
+
 /* ===== Selection Color ===== */
 ::selection {
   background: var(--primary);

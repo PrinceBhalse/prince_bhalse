@@ -31,6 +31,7 @@ Prince Bhalse is a Software Architect, Writer, and Poet. This digital garden ser
 - [Prem](https://prince-bhalse.vercel.app/blog/pyaar-aur-prem-ki-khoj): Meko pyaar kese ho sakta hai? Kashi ke kinare se lekar Premanand Ji aur Acharya Prashant ke vicharon tak, prem ki ek adhuri khoj.
 - [College Notes](https://prince-bhalse.vercel.app/blog/college-notes): College khatam, dosti aur yaadein hamesha dil me rahengi.
 - [The Art of Nothing](https://prince-bhalse.vercel.app/blog/the-art-of-nothing): Apart from the hustle of creating and planning, I believe one should also master the 'Art of Nothing'.
+- [Jo Kabhi Tha Hi Nahi: Limerence, Yaad aur Adhyasa](https://prince-bhalse.vercel.app/blog/limerence-yaad-aur-adhyasa): Kisi ko ek baar dekhna, ek baar baat karna, aur phir saalon tak uske khayal me jeena. Is feeling ka naam limerence hai — aur iske paas science, darshan aur shayari, teeno ka jawab hai.
 
 ## Fiction & Stories
 
